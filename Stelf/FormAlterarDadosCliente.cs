@@ -14,5 +14,17 @@ namespace Stelf
         {
             InitializeComponent();
         }
+
+        private void clienteAlterarDadosConfirmarBtn_Click(object sender, EventArgs e)
+        {
+            bool isNameValid = Validator.isValid(nomeClienteAlterarDadosTextBox.Text);
+            bool isSenhaValid = Validator.isValid(senhaClienteAlterarDadosTextBox.Text);
+            bool isEmailValid = Validator.emailIsValid(emailClienteAlterarDadosTextBox.Text);
+
+            if (!isNameValid || !isSenhaValid || !isEmailValid)
+            {
+                MessageBox.Show("Campos Inválidos");
+            }
+        }
     }
 }

@@ -119,6 +119,7 @@ namespace Stelf
             this.clienteAlterarDadosConfirmarBtn.TabIndex = 13;
             this.clienteAlterarDadosConfirmarBtn.Text = "Confirmar";
             this.clienteAlterarDadosConfirmarBtn.UseVisualStyleBackColor = true;
+            this.clienteAlterarDadosConfirmarBtn.Click += new System.EventHandler(this.clienteAlterarDadosConfirmarBtn_Click);
             // 
             // FormAlterarDadosCliente
             // 

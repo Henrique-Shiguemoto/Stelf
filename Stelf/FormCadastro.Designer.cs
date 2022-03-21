@@ -37,7 +37,6 @@ namespace Stelf
             this.senhaLabel = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.dataNascimentoTextBox = new System.Windows.Forms.TextBox();
             this.senhaTextBox = new System.Windows.Forms.TextBox();
             this.confirmarBtn = new System.Windows.Forms.Button();
             this.voltarCadastroBtn = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@ namespace Stelf
             this.contaBancariaLabel = new System.Windows.Forms.Label();
             this.contaBancariaComboBox = new System.Windows.Forms.ComboBox();
             this.obsLabel = new System.Windows.Forms.Label();
+            this.dataNascimentoCadastro = new System.Windows.Forms.DateTimePicker();
             this.tipoContaGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,13 +114,6 @@ namespace Stelf
             this.emailTextBox.Size = new System.Drawing.Size(466, 23);
             this.emailTextBox.TabIndex = 6;
             // 
-            // dataNascimentoTextBox
-            // 
-            this.dataNascimentoTextBox.Location = new System.Drawing.Point(32, 470);
-            this.dataNascimentoTextBox.Name = "dataNascimentoTextBox";
-            this.dataNascimentoTextBox.Size = new System.Drawing.Size(466, 23);
-            this.dataNascimentoTextBox.TabIndex = 7;
-            // 
             // senhaTextBox
             // 
             this.senhaTextBox.Location = new System.Drawing.Point(33, 401);
@@ -136,6 +129,7 @@ namespace Stelf
             this.confirmarBtn.TabIndex = 9;
             this.confirmarBtn.Text = "Confirmar";
             this.confirmarBtn.UseVisualStyleBackColor = true;
+            this.confirmarBtn.Click += new System.EventHandler(this.confirmarBtn_Click);
             // 
             // voltarCadastroBtn
             // 
@@ -196,6 +190,7 @@ namespace Stelf
             // 
             // contaBancariaComboBox
             // 
+            this.contaBancariaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contaBancariaComboBox.Enabled = false;
             this.contaBancariaComboBox.FormattingEnabled = true;
             this.contaBancariaComboBox.Items.AddRange(new object[] {
@@ -218,19 +213,26 @@ namespace Stelf
             this.obsLabel.TabIndex = 18;
             this.obsLabel.Text = "Obs: Opção para desenvolvedoras apenas.";
             // 
+            // dataNascimentoCadastro
+            // 
+            this.dataNascimentoCadastro.Location = new System.Drawing.Point(33, 471);
+            this.dataNascimentoCadastro.Name = "dataNascimentoCadastro";
+            this.dataNascimentoCadastro.Size = new System.Drawing.Size(236, 23);
+            this.dataNascimentoCadastro.TabIndex = 19;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(524, 622);
+            this.Controls.Add(this.dataNascimentoCadastro);
             this.Controls.Add(this.obsLabel);
             this.Controls.Add(this.contaBancariaComboBox);
             this.Controls.Add(this.contaBancariaLabel);
             this.Controls.Add(this.voltarCadastroBtn);
             this.Controls.Add(this.confirmarBtn);
             this.Controls.Add(this.senhaTextBox);
-            this.Controls.Add(this.dataNascimentoTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.senhaLabel);
@@ -261,7 +263,6 @@ namespace Stelf
         private System.Windows.Forms.Label senhaLabel;
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.TextBox dataNascimentoTextBox;
         private System.Windows.Forms.TextBox senhaTextBox;
         private System.Windows.Forms.Button confirmarBtn;
         private System.Windows.Forms.Button voltarCadastroBtn;
@@ -271,5 +272,6 @@ namespace Stelf
         private System.Windows.Forms.Label contaBancariaLabel;
         private System.Windows.Forms.ComboBox contaBancariaComboBox;
         private System.Windows.Forms.Label obsLabel;
+        private System.Windows.Forms.DateTimePicker dataNascimentoCadastro;
     }
 }

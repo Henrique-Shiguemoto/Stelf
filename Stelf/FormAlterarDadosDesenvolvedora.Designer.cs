@@ -36,11 +36,11 @@ namespace Stelf
             this.contaBancariaDesenvolvedoraAlterarDadosLabel = new System.Windows.Forms.Label();
             this.nomeDesenvolvedoraAlterarDadosTextBox = new System.Windows.Forms.TextBox();
             this.senhaDesenvolvedoraAlterarDadosTextBox = new System.Windows.Forms.TextBox();
-            this.contaBancariaDesenvolvedoraAlterarDadosTextBox = new System.Windows.Forms.TextBox();
             this.desenvolvedoraAlterarDadosConfirmarBtn = new System.Windows.Forms.Button();
             this.desenvolvedoraAlterarDadosCancelarBtn = new System.Windows.Forms.Button();
             this.emailDesenvolvedoraAlterarDadosTextBox = new System.Windows.Forms.TextBox();
             this.emailDesenvolvedoraAlterarDadosLabel = new System.Windows.Forms.Label();
+            this.contaBancariaComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // alterarDadosDesenvolvedoraLabel
@@ -97,13 +97,6 @@ namespace Stelf
             this.senhaDesenvolvedoraAlterarDadosTextBox.Size = new System.Drawing.Size(377, 23);
             this.senhaDesenvolvedoraAlterarDadosTextBox.TabIndex = 5;
             // 
-            // contaBancariaDesenvolvedoraAlterarDadosTextBox
-            // 
-            this.contaBancariaDesenvolvedoraAlterarDadosTextBox.Location = new System.Drawing.Point(26, 418);
-            this.contaBancariaDesenvolvedoraAlterarDadosTextBox.Name = "contaBancariaDesenvolvedoraAlterarDadosTextBox";
-            this.contaBancariaDesenvolvedoraAlterarDadosTextBox.Size = new System.Drawing.Size(377, 23);
-            this.contaBancariaDesenvolvedoraAlterarDadosTextBox.TabIndex = 6;
-            // 
             // desenvolvedoraAlterarDadosConfirmarBtn
             // 
             this.desenvolvedoraAlterarDadosConfirmarBtn.Location = new System.Drawing.Point(179, 482);
@@ -112,6 +105,7 @@ namespace Stelf
             this.desenvolvedoraAlterarDadosConfirmarBtn.TabIndex = 7;
             this.desenvolvedoraAlterarDadosConfirmarBtn.Text = "Confirmar";
             this.desenvolvedoraAlterarDadosConfirmarBtn.UseVisualStyleBackColor = true;
+            this.desenvolvedoraAlterarDadosConfirmarBtn.Click += new System.EventHandler(this.desenvolvedoraAlterarDadosConfirmarBtn_Click);
             // 
             // desenvolvedoraAlterarDadosCancelarBtn
             // 
@@ -139,17 +133,31 @@ namespace Stelf
             this.emailDesenvolvedoraAlterarDadosLabel.TabIndex = 9;
             this.emailDesenvolvedoraAlterarDadosLabel.Text = "Novo E-mail:";
             // 
+            // contaBancariaComboBox
+            // 
+            this.contaBancariaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.contaBancariaComboBox.FormattingEnabled = true;
+            this.contaBancariaComboBox.Items.AddRange(new object[] {
+            "Nubank",
+            "PicPay",
+            "Caixa Econômica",
+            "Banco do Brasil"});
+            this.contaBancariaComboBox.Location = new System.Drawing.Point(26, 414);
+            this.contaBancariaComboBox.Name = "contaBancariaComboBox";
+            this.contaBancariaComboBox.Size = new System.Drawing.Size(236, 23);
+            this.contaBancariaComboBox.TabIndex = 18;
+            // 
             // FormAlterarDadosDesenvolvedora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(431, 530);
+            this.Controls.Add(this.contaBancariaComboBox);
             this.Controls.Add(this.emailDesenvolvedoraAlterarDadosTextBox);
             this.Controls.Add(this.emailDesenvolvedoraAlterarDadosLabel);
             this.Controls.Add(this.desenvolvedoraAlterarDadosCancelarBtn);
             this.Controls.Add(this.desenvolvedoraAlterarDadosConfirmarBtn);
-            this.Controls.Add(this.contaBancariaDesenvolvedoraAlterarDadosTextBox);
             this.Controls.Add(this.senhaDesenvolvedoraAlterarDadosTextBox);
             this.Controls.Add(this.nomeDesenvolvedoraAlterarDadosTextBox);
             this.Controls.Add(this.contaBancariaDesenvolvedoraAlterarDadosLabel);
@@ -175,10 +183,10 @@ namespace Stelf
         private System.Windows.Forms.Label contaBancariaDesenvolvedoraAlterarDadosLabel;
         private System.Windows.Forms.TextBox nomeDesenvolvedoraAlterarDadosTextBox;
         private System.Windows.Forms.TextBox senhaDesenvolvedoraAlterarDadosTextBox;
-        private System.Windows.Forms.TextBox contaBancariaDesenvolvedoraAlterarDadosTextBox;
         private System.Windows.Forms.Button desenvolvedoraAlterarDadosConfirmarBtn;
         private System.Windows.Forms.Button desenvolvedoraAlterarDadosCancelarBtn;
         private System.Windows.Forms.TextBox emailDesenvolvedoraAlterarDadosTextBox;
         private System.Windows.Forms.Label emailDesenvolvedoraAlterarDadosLabel;
+        private System.Windows.Forms.ComboBox contaBancariaComboBox;
     }
 }

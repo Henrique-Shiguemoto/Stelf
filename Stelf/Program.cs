@@ -17,7 +17,7 @@ namespace Stelf
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLauncher());
+            Application.Run(new FormAlterarDadosDesenvolvedora());
         }
     }
 }
