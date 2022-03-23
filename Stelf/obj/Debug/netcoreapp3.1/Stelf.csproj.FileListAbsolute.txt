@@ -17,3 +17,47 @@ C:\dev\Stelf\Stelf\obj\Debug\netcoreapp3.1\Stelf.pdb
 C:\dev\Stelf\Stelf\obj\Debug\netcoreapp3.1\Stelf.genruntimeconfig.cache
 C:\dev\Stelf\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAlterarDadosCliente.resources
 C:\dev\Stelf\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAlterarDadosDesenvolvedora.resources
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\Stelf.exe
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\Stelf.deps.json
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\Stelf.runtimeconfig.json
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\Stelf.runtimeconfig.dev.json
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\Stelf.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\Stelf.pdb
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\DnsClient.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\linux\native\libsnappy64.so
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\linux\native\libzstd.so
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\osx\native\libsnappy64.dylib
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\osx\native\libzstd.dylib
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\linux\native\libmongocrypt.so
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\osx\native\libmongocrypt.dylib
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.AssemblyReference.cache
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAlterarDadosCliente.resources
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAlterarDadosDesenvolvedora.resources
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCadastro.resources
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormLauncher.resources
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.GenerateResource.cache
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.GeneratedMSBuildEditorConfig.editorconfig
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.AssemblyInfoInputs.cache
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.AssemblyInfo.cs
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.CoreCompileInputs.cache
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.CopyComplete
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.dll
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.pdb
+D:\USER SSD\Desktop\aualas ERE\ConSoft\Stelf\obj\Debug\netcoreapp3.1\Stelf.genruntimeconfig.cache

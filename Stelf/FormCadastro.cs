@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MongoDB.Driver;
 
 namespace Stelf
 {
@@ -13,6 +14,7 @@ namespace Stelf
         public FormCadastro()
         {
             InitializeComponent();
+            
         }
 
         private void voltarCadastroBtn_Click(object sender, EventArgs e)
@@ -54,8 +56,34 @@ namespace Stelf
             //Se forem validos, então a conexão com o banco de dados será realizada
             else
             {
-
+                ConnectionDB barqueiro = new ConnectionDB();
+                
+                if (devRadioBtn.Checked)
+                {
+                    barqueiro.inserirDesenvolvedora(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, contaBancariaComboBox.Text);
+                    MessageBox.Show("Nova Desenvolvedora adicionado");
+                }
+                if (clienteRadioBtn.Checked)
+                {
+                    barqueiro.inserirCliente(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, dataNascimentoCadastro.Text);
+                    MessageBox.Show("Novo Cliente adicionado");
+                }
             }
+        }
+
+        private void nomeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataNascimentoCadastro_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void senhaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

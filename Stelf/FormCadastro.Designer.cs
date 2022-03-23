@@ -106,6 +106,7 @@ namespace Stelf
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(466, 23);
             this.nomeTextBox.TabIndex = 5;
+            this.nomeTextBox.TextChanged += new System.EventHandler(this.nomeTextBox_TextChanged);
             // 
             // emailTextBox
             // 
@@ -120,6 +121,7 @@ namespace Stelf
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.Size = new System.Drawing.Size(466, 23);
             this.senhaTextBox.TabIndex = 8;
+            this.senhaTextBox.TextChanged += new System.EventHandler(this.senhaTextBox_TextChanged);
             // 
             // confirmarBtn
             // 
@@ -219,6 +221,7 @@ namespace Stelf
             this.dataNascimentoCadastro.Name = "dataNascimentoCadastro";
             this.dataNascimentoCadastro.Size = new System.Drawing.Size(236, 23);
             this.dataNascimentoCadastro.TabIndex = 19;
+            this.dataNascimentoCadastro.ValueChanged += new System.EventHandler(this.dataNascimentoCadastro_ValueChanged);
             // 
             // FormCadastro
             // 

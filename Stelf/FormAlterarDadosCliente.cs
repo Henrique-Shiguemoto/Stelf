@@ -25,6 +25,17 @@ namespace Stelf
             {
                 MessageBox.Show("Campos Inválidos");
             }
+            else
+            {
+                //ConnectionDB barqueiro = new ConnectionDB();
+                if(!String.IsNullOrWhiteSpace(nomeClienteAlterarDadosLabel.Text))
+                {
+                    String param = "{$set: { 'Nome' : " + nomeClienteAlterarDadosLabel.Text + "} }";
+                    String filter = "{ 'Nome' : 'DiegoTakahashi'}";
+                   // barqueiro.alterarDadoCliente(param, filter);
+                }
+               // MessageBox.Show("Dados alterados com sucesso!");
+            }
         }
     }
 }
