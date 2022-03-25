@@ -47,6 +47,8 @@ namespace Stelf
             this.contaBancariaComboBox = new System.Windows.Forms.ComboBox();
             this.obsLabel = new System.Windows.Forms.Label();
             this.dataNascimentoCadastro = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tipoContaGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +108,6 @@ namespace Stelf
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(466, 23);
             this.nomeTextBox.TabIndex = 5;
-            this.nomeTextBox.TextChanged += new System.EventHandler(this.nomeTextBox_TextChanged);
             // 
             // emailTextBox
             // 
@@ -119,9 +120,8 @@ namespace Stelf
             // 
             this.senhaTextBox.Location = new System.Drawing.Point(33, 401);
             this.senhaTextBox.Name = "senhaTextBox";
-            this.senhaTextBox.Size = new System.Drawing.Size(466, 23);
+            this.senhaTextBox.Size = new System.Drawing.Size(236, 23);
             this.senhaTextBox.TabIndex = 8;
-            this.senhaTextBox.TextChanged += new System.EventHandler(this.senhaTextBox_TextChanged);
             // 
             // confirmarBtn
             // 
@@ -221,7 +221,25 @@ namespace Stelf
             this.dataNascimentoCadastro.Name = "dataNascimentoCadastro";
             this.dataNascimentoCadastro.Size = new System.Drawing.Size(236, 23);
             this.dataNascimentoCadastro.TabIndex = 19;
-            this.dataNascimentoCadastro.ValueChanged += new System.EventHandler(this.dataNascimentoCadastro_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(275, 405);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(281, 401);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 30);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Obs: 8 caracteres no mínimo e 16 caracteres no máximo";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // FormCadastro
             // 
@@ -229,6 +247,8 @@ namespace Stelf
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(524, 622);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataNascimentoCadastro);
             this.Controls.Add(this.obsLabel);
             this.Controls.Add(this.contaBancariaComboBox);
@@ -276,5 +296,7 @@ namespace Stelf
         private System.Windows.Forms.ComboBox contaBancariaComboBox;
         private System.Windows.Forms.Label obsLabel;
         private System.Windows.Forms.DateTimePicker dataNascimentoCadastro;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

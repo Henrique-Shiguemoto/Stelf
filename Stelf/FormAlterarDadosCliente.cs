@@ -17,24 +17,38 @@ namespace Stelf
 
         private void clienteAlterarDadosConfirmarBtn_Click(object sender, EventArgs e)
         {
-            bool isNameValid = Validator.isValid(nomeClienteAlterarDadosTextBox.Text);
-            bool isSenhaValid = Validator.isValid(senhaClienteAlterarDadosTextBox.Text);
+            bool isNameValid = Validator.isNomeValid(nomeClienteAlterarDadosTextBox.Text);
+            bool isSenhaValid = Validator.isSenhaValid(senhaClienteAlterarDadosTextBox.Text);
             bool isEmailValid = Validator.emailIsValid(emailClienteAlterarDadosTextBox.Text);
+
+            String[] mensagens_de_erro = { "Nome Inválido", "Senha Inválida", "E-mail Inválido"};
+            String mensagem_erro = "";
 
             if (!isNameValid || !isSenhaValid || !isEmailValid)
             {
-                MessageBox.Show("Campos Inválidos");
+                if (!isNameValid)
+                {
+                    mensagem_erro += mensagens_de_erro[0] + "\n";
+                }
+
+                if (!isSenhaValid)
+                {
+                    mensagem_erro += mensagens_de_erro[1] + "\n";
+                }
+
+                if (!isEmailValid)
+                {
+                    mensagem_erro += mensagens_de_erro[2] + "\n";
+                }
+                MessageBox.Show(mensagem_erro, "Campos Inválidos!");
             }
             else
             {
-                //ConnectionDB barqueiro = new ConnectionDB();
                 if(!String.IsNullOrWhiteSpace(nomeClienteAlterarDadosLabel.Text))
                 {
                     String param = "{$set: { 'Nome' : " + nomeClienteAlterarDadosLabel.Text + "} }";
                     String filter = "{ 'Nome' : 'DiegoTakahashi'}";
-                   // barqueiro.alterarDadoCliente(param, filter);
                 }
-               // MessageBox.Show("Dados alterados com sucesso!");
             }
         }
     }

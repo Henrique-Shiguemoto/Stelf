@@ -46,12 +46,9 @@ namespace Stelf
             //filter = valor a ser alterado
             //param = novo valor
             //BsonDocument filterDoc = BsonDocument.Parse(filter);
-           // BsonDocument document = BsonDocument.Parse(param);
+            //BsonDocument document = BsonDocument.Parse(param);
             //m_collection.UpdateOne(filterDoc, document);
 
         }
-
-
-
     }
 }

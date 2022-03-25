@@ -12,6 +12,5 @@ namespace Stelf
         public String Email { get; set; }
         public String ContaBancaria { get; set; }
         public String Senha { get; set; }
-
     }
 }

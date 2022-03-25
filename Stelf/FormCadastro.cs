@@ -14,7 +14,6 @@ namespace Stelf
         public FormCadastro()
         {
             InitializeComponent();
-            
         }
 
         private void voltarCadastroBtn_Click(object sender, EventArgs e)
@@ -38,20 +37,41 @@ namespace Stelf
 
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
-            bool isNameValid = Validator.isValid(nomeTextBox.Text);
-            bool isSenhaValid = Validator.isValid(senhaTextBox.Text);
+            bool isNameValid = Validator.isNomeValid(nomeTextBox.Text);
+            bool isSenhaValid = Validator.isSenhaValid(senhaTextBox.Text);
             bool isEmailValid = Validator.emailIsValid(emailTextBox.Text);
             bool isBancoValid = true;
-            
+
+            String[] mensagens_de_erro = {"Nome Inválido", "Senha Inválida", "E-mail Inválido", "Banco Inválido"};
+            String mensagem_erro = "";
+
             if (devRadioBtn.Checked)
             {
                 isBancoValid = Validator.contaBancariaIsValid(contaBancariaComboBox.Text);
             }
 
-            //Se algum dos campos forem invalidados
-            if (!isNameValid || !isEmailValid || !isSenhaValid || !isBancoValid)
+            if (!isNameValid || !isSenhaValid || !isEmailValid || !isBancoValid)
             {
-                MessageBox.Show("Campos Inválidos!");
+                if (!isNameValid)
+                {
+                    mensagem_erro += mensagens_de_erro[0] + "\n";
+                }
+
+                if (!isSenhaValid)
+                {
+                    mensagem_erro += mensagens_de_erro[1] + "\n";
+                }
+
+                if (!isEmailValid)
+                {
+                    mensagem_erro += mensagens_de_erro[2] + "\n";
+                }
+
+                if (!isBancoValid)
+                {
+                    mensagem_erro += mensagens_de_erro[3] + "\n";
+                }
+                MessageBox.Show(mensagem_erro, "Campos Inválidos!");
             }
             //Se forem validos, então a conexão com o banco de dados será realizada
             else
@@ -69,21 +89,6 @@ namespace Stelf
                     MessageBox.Show("Novo Cliente adicionado");
                 }
             }
-        }
-
-        private void nomeTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataNascimentoCadastro_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void senhaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

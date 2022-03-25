@@ -17,8 +17,8 @@ namespace Stelf
 
         private void desenvolvedoraAlterarDadosConfirmarBtn_Click(object sender, EventArgs e)
         {
-            bool isNameValid = Validator.isValid(nomeDesenvolvedoraAlterarDadosTextBox.Text);
-            bool isSenhaValid = Validator.isValid(senhaDesenvolvedoraAlterarDadosTextBox.Text);
+            bool isNameValid = Validator.isNomeValid(nomeDesenvolvedoraAlterarDadosTextBox.Text);
+            bool isSenhaValid = Validator.isSenhaValid(senhaDesenvolvedoraAlterarDadosTextBox.Text);
             bool isEmailValid = Validator.emailIsValid(emailDesenvolvedoraAlterarDadosTextBox.Text);
             bool isBancoValid = Validator.contaBancariaIsValid(contaBancariaComboBox.Text);
 
