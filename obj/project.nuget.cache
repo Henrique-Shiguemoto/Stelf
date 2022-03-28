@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uxu7cjRG13Xif6TTNHvSv/N3XSHkNJdxB74PPdlNV1YqPpVKr28oB7I154kUN+Gp7V5rrCiK4FDd2lA1yXJ7Ow==",
+  "dgSpecHash": "gFt0S+rCv3885TOkqBK13oiytLGwXnoeOz7dKYOzWF+jnouN+dZkVXmRYvXuC2JgAWr3xuZG+XnnpmXyTyO4rw==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Stelf\\Stelf\\Stelf\\Stelf.csproj",
+  "projectFilePath": "C:\\dev\\Stelf\\Stelf\\Stelf.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\azric\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",
     "C:\\Users\\azric\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",

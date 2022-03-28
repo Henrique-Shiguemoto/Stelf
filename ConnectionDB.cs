@@ -15,12 +15,10 @@ namespace Stelf
 
         public ConnectionDB()
         {
-   
             m_Client = new MongoClient("mongodb+srv://gostoso:1231@mainstelf.emryq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             m_Database = m_Client.GetDatabase("mainStelf");
             m_collection = m_Database.GetCollection<Cliente>("Cliente");
             m_collection2 = m_Database.GetCollection<Desenvolvedora>("Desenvolvedora");
-
         }
          public void inserirCliente(String nome, String email, String senha, String dataNascimento)
         {
@@ -48,7 +46,37 @@ namespace Stelf
             //BsonDocument filterDoc = BsonDocument.Parse(filter);
             //BsonDocument document = BsonDocument.Parse(param);
             //m_collection.UpdateOne(filterDoc, document);
-
         }
+
+        public Cliente devolverClientePorEmail(String email)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Email = "";
+            try
+            {
+                var filtro = Builders<Cliente>.Filter.Eq("Email", email);
+                return m_collection.Find(filtro).First();
+            }
+            catch
+            {
+                return cliente;
+            }
+        }
+
+        public Desenvolvedora devolverDesenvolvedoraPorEmail(String email)
+        {
+            Desenvolvedora desenvolvedora = new Desenvolvedora();
+            desenvolvedora.Email = "";
+            try
+            {
+                var filtro = Builders<Desenvolvedora>.Filter.Eq("Email", email);
+                return m_collection2.Find(filtro).First();
+            }
+            catch
+            {
+                return desenvolvedora;
+            }
+        }
+
     }
 }
