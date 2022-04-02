@@ -20,7 +20,7 @@ namespace Stelf
             m_collection = m_Database.GetCollection<Cliente>("Cliente");
             m_collection2 = m_Database.GetCollection<Desenvolvedora>("Desenvolvedora");
         }
-         public void inserirCliente(String nome, String email, String senha, String dataNascimento)
+         public void inserirCliente(String nome, String email, String senha, DateTime dataNascimento)
         {
             Cliente cliente = new Cliente();
             cliente.Nome = nome;
@@ -29,13 +29,13 @@ namespace Stelf
             cliente.DataNascimento = dataNascimento;
             m_collection.InsertOne(cliente);
         }
-        public void inserirDesenvolvedora(String nome, String email, String senha, String contaBancaria)
+        public void inserirDesenvolvedora(String nome, String email, String senha, String /*ContaBancaria*/ contaBancaria)
         {
             Desenvolvedora desenvolvedora = new Desenvolvedora();
             desenvolvedora.Nome = nome;
             desenvolvedora.Senha = senha;
             desenvolvedora.Email = email;
-            desenvolvedora.ContaBancaria = contaBancaria;
+            desenvolvedora.contaBancaria = contaBancaria;
             m_collection2.InsertOne(desenvolvedora);
         }
 

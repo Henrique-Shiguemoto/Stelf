@@ -80,12 +80,17 @@ namespace Stelf
                 
                 if (devRadioBtn.Checked)
                 {
-                    barqueiro.inserirDesenvolvedora(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, contaBancariaComboBox.Text);
+                    //ContaBancaria conta = new ContaBancaria();
+                    //conta.banco = ;
+                    //conta.agencia = ;
+                    //conta.conta = ;
+                    //conta.nome = ;
+                    barqueiro.inserirDesenvolvedora(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, /*tipo ContaBancaria*/ contaBancariaComboBox.Text);
                     MessageBox.Show("Nova Desenvolvedora adicionado");
                 }
                 if (clienteRadioBtn.Checked)
-                {
-                    barqueiro.inserirCliente(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, dataNascimentoCadastro.Text);
+                {                    
+                    barqueiro.inserirCliente(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, dataNascimentoCadastro.Value);
                     MessageBox.Show("Novo Cliente adicionado");
                 }
             }

@@ -10,7 +10,7 @@ namespace Stelf
         public ObjectId _id { get; set; }
         public String Nome { get; set; }
         public String Email { get; set; }
-        public String DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
         public String Senha { get; set; }
     }
 }

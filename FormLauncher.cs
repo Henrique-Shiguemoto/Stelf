@@ -35,11 +35,11 @@ namespace Stelf
             //Se o Email for uma string vazia, quer dizer que o método devolverClientePorEmail devolveu um cliente inválido
             if (!cliente.Email.Equals("") && cliente.Senha == passwordTextBox.Text)
             {
-                MessageBox.Show("Nome: " + cliente.Nome + " ; Data de Nascimento: " + cliente.DataNascimento);
+                MessageBox.Show("Nome: " + cliente.Nome);
             }
             else if(!desenvolvedora.Email.Equals("") && desenvolvedora.Senha == passwordTextBox.Text)
             {
-                MessageBox.Show("Nome: " + desenvolvedora.Nome + " ; Conta Bancária: " + desenvolvedora.ContaBancaria);
+                MessageBox.Show("Nome: " + desenvolvedora.Nome);
             }
             else
             {
