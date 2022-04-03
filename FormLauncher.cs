@@ -33,13 +33,22 @@ namespace Stelf
             Desenvolvedora desenvolvedora = barqueiro.devolverDesenvolvedoraPorEmail(emailTextBox.Text);
 
             //Se o Email for uma string vazia, quer dizer que o método devolverClientePorEmail devolveu um cliente inválido
-            if (!cliente.Email.Equals("") && cliente.Senha == passwordTextBox.Text)
+            if (cliente != null && cliente.Senha == passwordTextBox.Text)
             {
                 MessageBox.Show("Nome: " + cliente.Nome);
+                FormLoja frmLoja = new FormLoja(cliente, desenvolvedora);
+                frmLoja.Tag = this;
+                frmLoja.Show(this);
+                Hide();
+
             }
-            else if(!desenvolvedora.Email.Equals("") && desenvolvedora.Senha == passwordTextBox.Text)
+            else if(desenvolvedora != null && desenvolvedora.Senha == passwordTextBox.Text)
             {
                 MessageBox.Show("Nome: " + desenvolvedora.Nome);
+                FormLoja frmLoja = new FormLoja(cliente, desenvolvedora);
+                frmLoja.Tag = this;
+                frmLoja.Show(this);
+                Hide();
             }
             else
             {
