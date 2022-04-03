@@ -10,8 +10,11 @@ namespace Stelf
 {
     public partial class FormAlterarDadosCliente : Form
     {
-        public FormAlterarDadosCliente()
+        private Cliente cliente = null;
+        
+        public FormAlterarDadosCliente(Cliente cliente)
         {
+            this.cliente = cliente;
             InitializeComponent();
         }
 
@@ -50,6 +53,22 @@ namespace Stelf
                     String filter = "{ 'Nome' : 'DiegoTakahashi'}";
                 }
             }
+        }
+
+        private void clienteAlterarDadosCancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormAlterarDadosCliente_VisibleChanged(object sender, EventArgs e)
+        {
+            ConnectionDB barqueiro = new ConnectionDB();
+
+            Cliente clienteRetornado = barqueiro.devolverClientePorEmail(cliente.Email);
+
+            nomeClienteAlterarDadosTextBox.Text = clienteRetornado.Nome;
+            senhaClienteAlterarDadosTextBox.Text = clienteRetornado.Senha;
+            emailClienteAlterarDadosTextBox.Text = clienteRetornado.Email;
         }
     }
 }

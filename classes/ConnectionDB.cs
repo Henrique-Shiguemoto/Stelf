@@ -50,33 +50,32 @@ namespace Stelf
 
         public Cliente devolverClientePorEmail(String email)
         {
+            Cliente cliente = new Cliente();
+            cliente.Email = "";
             try
             {
-                Cliente cliente = new Cliente();
-                cliente.Email = "";
                 var filtro = Builders<Cliente>.Filter.Eq("Email", email);
                 return m_collection.Find(filtro).First();
             }
             catch
             {
-                return null;
+                return cliente;
             }
         }
 
         public Desenvolvedora devolverDesenvolvedoraPorEmail(String email)
         {
+            Desenvolvedora desenvolvedora = new Desenvolvedora();
+            desenvolvedora.Email = "";
             try
             {
-                Desenvolvedora desenvolvedora = new Desenvolvedora();
-                desenvolvedora.Email = "";
                 var filtro = Builders<Desenvolvedora>.Filter.Eq("Email", email);
                 return m_collection2.Find(filtro).First();
             }
             catch
             {
-                return null;
+                return desenvolvedora;
             }
         }
-
     }
 }

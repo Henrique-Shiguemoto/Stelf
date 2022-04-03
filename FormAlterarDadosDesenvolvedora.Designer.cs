@@ -115,6 +115,7 @@ namespace Stelf
             this.desenvolvedoraAlterarDadosCancelarBtn.TabIndex = 8;
             this.desenvolvedoraAlterarDadosCancelarBtn.Text = "Cancelar";
             this.desenvolvedoraAlterarDadosCancelarBtn.UseVisualStyleBackColor = true;
+            this.desenvolvedoraAlterarDadosCancelarBtn.Click += new System.EventHandler(this.desenvolvedoraAlterarDadosCancelarBtn_Click);
             // 
             // emailDesenvolvedoraAlterarDadosTextBox
             // 
@@ -170,6 +171,7 @@ namespace Stelf
             this.Name = "FormAlterarDadosDesenvolvedora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Dados";
+            this.VisibleChanged += new System.EventHandler(this.FormAlterarDadosDesenvolvedora_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

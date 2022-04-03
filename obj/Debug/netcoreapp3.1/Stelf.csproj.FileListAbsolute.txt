@@ -176,3 +176,5 @@ H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.CopyComplete
 H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.dll
 H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.pdb
 H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.genruntimeconfig.cache
+C:\dev\Stelf\Stelf\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormLoja.resources
+C:\dev\Stelf\Stelf\Stelf\obj\Debug\netcoreapp3.1\Stelf.Properties.Resources.resources

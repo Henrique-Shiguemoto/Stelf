@@ -9,5 +9,6 @@ namespace Stelf
         public String agencia { get; set; }
         public String nome { get; set; }
         public String conta { get; set; }
+        public String banco { get; set; }
     }
 }

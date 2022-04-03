@@ -36,7 +36,6 @@ namespace Stelf
             this.btnBiblioteca = new System.Windows.Forms.Button();
             this.btnLoja = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.lbDataNascimento = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbNome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,6 +71,7 @@ namespace Stelf
             this.btnLogOut.TabIndex = 4;
             this.btnLogOut.Text = "DESCONECTAR";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnEditarPerfil
             // 
@@ -107,7 +107,6 @@ namespace Stelf
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panelLogo.Controls.Add(this.lbDataNascimento);
             this.panelLogo.Controls.Add(this.lbEmail);
             this.panelLogo.Controls.Add(this.lbNome);
             this.panelLogo.Controls.Add(this.pictureBox1);
@@ -117,36 +116,25 @@ namespace Stelf
             this.panelLogo.Size = new System.Drawing.Size(200, 267);
             this.panelLogo.TabIndex = 0;
             // 
-            // lbDataNascimento
-            // 
-            this.lbDataNascimento.AutoSize = true;
-            this.lbDataNascimento.Font = new System.Drawing.Font("SF Movie Poster", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbDataNascimento.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbDataNascimento.Location = new System.Drawing.Point(59, 224);
-            this.lbDataNascimento.Name = "lbDataNascimento";
-            this.lbDataNascimento.Size = new System.Drawing.Size(89, 13);
-            this.lbDataNascimento.TabIndex = 3;
-            this.lbDataNascimento.Text = "Data Nascimento";
-            // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("SF Movie Poster", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbEmail.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbEmail.Location = new System.Drawing.Point(59, 197);
+            this.lbEmail.Location = new System.Drawing.Point(26, 214);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(33, 13);
+            this.lbEmail.Size = new System.Drawing.Size(45, 18);
             this.lbEmail.TabIndex = 2;
             this.lbEmail.Text = "Email";
             // 
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Font = new System.Drawing.Font("SF Movie Poster", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbNome.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbNome.Location = new System.Drawing.Point(59, 166);
+            this.lbNome.Location = new System.Drawing.Point(26, 177);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(32, 13);
+            this.lbNome.Size = new System.Drawing.Size(49, 18);
             this.lbNome.TabIndex = 1;
             this.lbNome.Text = "Nome";
             // 
@@ -176,6 +164,7 @@ namespace Stelf
             this.panelConteudo.Name = "panelConteudo";
             this.panelConteudo.Size = new System.Drawing.Size(863, 525);
             this.panelConteudo.TabIndex = 5;
+            this.panelConteudo.VisibleChanged += new System.EventHandler(this.panelConteudo_VisibleChanged);
             // 
             // labelTitulo
             // 
@@ -207,6 +196,7 @@ namespace Stelf
             this.Controls.Add(this.panelConteudo);
             this.Controls.Add(this.textBoxBusca);
             this.Controls.Add(this.panelPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLoja";
             this.Text = "Loja Principal";
             this.panelPrincipal.ResumeLayout(false);
@@ -231,7 +221,6 @@ namespace Stelf
         private System.Windows.Forms.FlowLayoutPanel panelConteudo;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label lbDataNascimento;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbNome;
     }

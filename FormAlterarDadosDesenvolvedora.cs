@@ -10,8 +10,11 @@ namespace Stelf
 {
     public partial class FormAlterarDadosDesenvolvedora : Form
     {
-        public FormAlterarDadosDesenvolvedora()
+        private Desenvolvedora desenvolvedora;
+
+        public FormAlterarDadosDesenvolvedora(Desenvolvedora desenvolvedora)
         {
+            this.desenvolvedora = desenvolvedora;
             InitializeComponent();
         }
 
@@ -26,6 +29,22 @@ namespace Stelf
             {
                 MessageBox.Show("Campos Inválidos");
             }
+        }
+
+        private void desenvolvedoraAlterarDadosCancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormAlterarDadosDesenvolvedora_VisibleChanged(object sender, EventArgs e)
+        {
+            ConnectionDB barqueiro = new ConnectionDB();
+            Desenvolvedora desenvolvedoraRetornada = barqueiro.devolverDesenvolvedoraPorEmail(desenvolvedora.Email);
+
+            nomeDesenvolvedoraAlterarDadosTextBox.Text = desenvolvedoraRetornada.Nome;
+            senhaDesenvolvedoraAlterarDadosTextBox.Text = desenvolvedoraRetornada.Senha;
+            emailDesenvolvedoraAlterarDadosTextBox.Text = desenvolvedoraRetornada.Email;
+            contaBancariaComboBox.Text = desenvolvedoraRetornada.contaBancaria;
         }
     }
 }

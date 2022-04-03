@@ -110,6 +110,7 @@ namespace Stelf
             this.clienteAlterarDadosCancelarBtn.TabIndex = 14;
             this.clienteAlterarDadosCancelarBtn.Text = "Cancelar";
             this.clienteAlterarDadosCancelarBtn.UseVisualStyleBackColor = true;
+            this.clienteAlterarDadosCancelarBtn.Click += new System.EventHandler(this.clienteAlterarDadosCancelarBtn_Click);
             // 
             // clienteAlterarDadosConfirmarBtn
             // 
@@ -142,6 +143,7 @@ namespace Stelf
             this.Name = "FormAlterarDadosCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Dados";
+            this.VisibleChanged += new System.EventHandler(this.FormAlterarDadosCliente_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -123,6 +123,7 @@ namespace Stelf
             this.Name = "FormLauncher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Launcher";
+            this.VisibleChanged += new System.EventHandler(this.FormLauncher_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

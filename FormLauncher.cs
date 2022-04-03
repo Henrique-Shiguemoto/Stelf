@@ -32,19 +32,16 @@ namespace Stelf
             Cliente cliente = barqueiro.devolverClientePorEmail(emailTextBox.Text);
             Desenvolvedora desenvolvedora = barqueiro.devolverDesenvolvedoraPorEmail(emailTextBox.Text);
 
-            //Se o Email for uma string vazia, quer dizer que o método devolverClientePorEmail devolveu um cliente inválido
-            if (cliente != null && cliente.Senha == passwordTextBox.Text)
+            if (!cliente.Email.Equals("") && cliente.Senha == passwordTextBox.Text)
             {
-                MessageBox.Show("Nome: " + cliente.Nome);
                 FormLoja frmLoja = new FormLoja(cliente, desenvolvedora);
                 frmLoja.Tag = this;
                 frmLoja.Show(this);
                 Hide();
 
             }
-            else if(desenvolvedora != null && desenvolvedora.Senha == passwordTextBox.Text)
+            else if(!desenvolvedora.Email.Equals("") && desenvolvedora.Senha == passwordTextBox.Text)
             {
-                MessageBox.Show("Nome: " + desenvolvedora.Nome);
                 FormLoja frmLoja = new FormLoja(cliente, desenvolvedora);
                 frmLoja.Tag = this;
                 frmLoja.Show(this);
@@ -54,6 +51,12 @@ namespace Stelf
             {
                 MessageBox.Show("Conta Não Encontrada!");
             }
+        }
+
+        private void FormLauncher_VisibleChanged(object sender, EventArgs e)
+        {
+            emailTextBox.Text = "";
+            passwordTextBox.Text = "";
         }
     }
 }
