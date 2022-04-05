@@ -29,6 +29,18 @@ namespace Stelf
             {
                 MessageBox.Show("Campos Inválidos");
             }
+            else
+            {
+                if (!String.IsNullOrWhiteSpace(nomeDesenvolvedoraAlterarDadosLabel.Text))
+                {
+                    ConnectionDB barqueiro = new ConnectionDB();
+
+                    Desenvolvedora desenvolvedoraAtual = barqueiro.devolverDesenvolvedoraPorEmail(desenvolvedora.Email);
+                    barqueiro.alterarDadoDesenvolvedora(desenvolvedoraAtual._id, nomeDesenvolvedoraAlterarDadosTextBox.Text, senhaDesenvolvedoraAlterarDadosTextBox.Text, emailDesenvolvedoraAlterarDadosTextBox.Text , contaBancariaComboBox.Text);
+                    MessageBox.Show("Dados alterados com sucesso");
+                    this.Close();
+                }
+            }
         }
 
         private void desenvolvedoraAlterarDadosCancelarBtn_Click(object sender, EventArgs e)

@@ -85,13 +85,29 @@ namespace Stelf
                     //conta.agencia = ;
                     //conta.conta = ;
                     //conta.nome = ;
-                    barqueiro.inserirDesenvolvedora(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, /*tipo ContaBancaria*/ contaBancariaComboBox.Text);
-                    MessageBox.Show("Nova Desenvolvedora adicionado");
+                    if (barqueiro.devolverDesenvolvedoraPorEmail(emailTextBox.Text).Email.Equals(""))
+                    {              
+                        barqueiro.inserirDesenvolvedora(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, /*tipo ContaBancaria*/ contaBancariaComboBox.Text);
+                        MessageBox.Show("Nova Desenvolvedora adicionado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email já cadastrado: não é possivel utilizar o mesmo email");
+                    }
                 }
                 if (clienteRadioBtn.Checked)
                 {                    
-                    barqueiro.inserirCliente(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, dataNascimentoCadastro.Value);
-                    MessageBox.Show("Novo Cliente adicionado");
+                   
+                    if(barqueiro.devolverClientePorEmail(emailTextBox.Text).Email.Equals(""))
+                    {
+                        barqueiro.inserirCliente(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, dataNascimentoCadastro.Value);
+                        MessageBox.Show("Novo Cliente adicionado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email já cadastrado: não é possivel utilizar o mesmo email");
+                    }
+
                 }
             }
         }

@@ -31,6 +31,7 @@ namespace Stelf
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoja));
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.btnAdicionarJogo = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnEditarPerfil = new System.Windows.Forms.Button();
             this.btnBiblioteca = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@ namespace Stelf
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panelPrincipal.Controls.Add(this.btnAdicionarJogo);
             this.panelPrincipal.Controls.Add(this.btnLogOut);
             this.panelPrincipal.Controls.Add(this.btnEditarPerfil);
             this.panelPrincipal.Controls.Add(this.btnBiblioteca);
@@ -61,6 +63,18 @@ namespace Stelf
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(200, 596);
             this.panelPrincipal.TabIndex = 0;
+            // 
+            // btnAdicionarJogo
+            // 
+            this.btnAdicionarJogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdicionarJogo.Location = new System.Drawing.Point(0, 465);
+            this.btnAdicionarJogo.Name = "btnAdicionarJogo";
+            this.btnAdicionarJogo.Size = new System.Drawing.Size(200, 66);
+            this.btnAdicionarJogo.TabIndex = 5;
+            this.btnAdicionarJogo.Text = "ADICIONAR JOGO";
+            this.btnAdicionarJogo.UseVisualStyleBackColor = true;
+            this.btnAdicionarJogo.Visible = false;
+            this.btnAdicionarJogo.Click += new System.EventHandler(this.btnAdicionarJogo_Click);
             // 
             // btnLogOut
             // 
@@ -223,5 +237,6 @@ namespace Stelf
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbNome;
+        private System.Windows.Forms.Button btnAdicionarJogo;
     }
 }

@@ -64,6 +64,7 @@ namespace Stelf
             this.nomeClienteAlterarDadosTextBox.Name = "nomeClienteAlterarDadosTextBox";
             this.nomeClienteAlterarDadosTextBox.Size = new System.Drawing.Size(377, 23);
             this.nomeClienteAlterarDadosTextBox.TabIndex = 8;
+            this.nomeClienteAlterarDadosTextBox.TextChanged += new System.EventHandler(this.nomeClienteAlterarDadosTextBox_TextChanged);
             // 
             // senhaClienteAlterarDadosLabel
             // 

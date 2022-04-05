@@ -49,8 +49,12 @@ namespace Stelf
             {
                 if(!String.IsNullOrWhiteSpace(nomeClienteAlterarDadosLabel.Text))
                 {
-                    String param = "{$set: { 'Nome' : " + nomeClienteAlterarDadosLabel.Text + "} }";
-                    String filter = "{ 'Nome' : 'DiegoTakahashi'}";
+                    ConnectionDB barqueiro = new ConnectionDB();
+
+                    Cliente clienteAtual = barqueiro.devolverClientePorEmail(cliente.Email);
+                    barqueiro.alterarDadoCliente(clienteAtual._id, nomeClienteAlterarDadosTextBox.Text, senhaClienteAlterarDadosTextBox.Text, emailClienteAlterarDadosTextBox.Text);
+                    MessageBox.Show("Dados alterados com sucesso");
+                    this.Close();
                 }
             }
         }
@@ -69,6 +73,11 @@ namespace Stelf
             nomeClienteAlterarDadosTextBox.Text = clienteRetornado.Nome;
             senhaClienteAlterarDadosTextBox.Text = clienteRetornado.Senha;
             emailClienteAlterarDadosTextBox.Text = clienteRetornado.Email;
+        }
+
+        private void nomeClienteAlterarDadosTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

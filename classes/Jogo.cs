@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MongoDB.Bson;
 
 namespace Stelf
 {
     public class Jogo
     {
-        public int id { get; set; }
+        public ObjectId _id { get; set; }
+        public byte[] imagem { get; set; }
         public String nome { get; set; }
         public float preco { get; set; }
         public String genero { get; set; }

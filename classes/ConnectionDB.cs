@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using System.IO;
+using System.Drawing;
 
 namespace Stelf
 {
@@ -12,6 +14,14 @@ namespace Stelf
         IMongoDatabase m_Database;
         IMongoCollection<Cliente> m_collection;
         IMongoCollection<Desenvolvedora> m_collection2;
+        IMongoCollection<Jogo> m_collection3;
+        public Image BytesToImage(byte[] byteArray)
+        {
+            using (var ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
+        }
 
         public ConnectionDB()
         {
@@ -19,33 +29,81 @@ namespace Stelf
             m_Database = m_Client.GetDatabase("mainStelf");
             m_collection = m_Database.GetCollection<Cliente>("Cliente");
             m_collection2 = m_Database.GetCollection<Desenvolvedora>("Desenvolvedora");
+            m_collection3 = m_Database.GetCollection<Jogo>("Jogo");
+            var options = new CreateIndexOptions { Unique = true };
+
         }
          public void inserirCliente(String nome, String email, String senha, DateTime dataNascimento)
         {
+            try
+            {
             Cliente cliente = new Cliente();
             cliente.Nome = nome;
             cliente.Senha = senha;
             cliente.Email = email;
             cliente.DataNascimento = dataNascimento;
             m_collection.InsertOne(cliente);
+
+            }
+            catch(Exception ex)
+            {
+            }
         }
         public void inserirDesenvolvedora(String nome, String email, String senha, String /*ContaBancaria*/ contaBancaria)
         {
+            try
+            {
             Desenvolvedora desenvolvedora = new Desenvolvedora();
             desenvolvedora.Nome = nome;
             desenvolvedora.Senha = senha;
             desenvolvedora.Email = email;
             desenvolvedora.contaBancaria = contaBancaria;
             m_collection2.InsertOne(desenvolvedora);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
-        public void alterarDadoCliente(String param, String filter)
+        public void inserirJogo(String nome, byte[] imagem,float preco, String genero, int faixaEtaria, Desenvolvedora desenvolvedora, Requisitos minRequisitos, Requisitos recRequisitos, String descricao)
         {
-            //filter = valor a ser alterado
-            //param = novo valor
-            //BsonDocument filterDoc = BsonDocument.Parse(filter);
-            //BsonDocument document = BsonDocument.Parse(param);
-            //m_collection.UpdateOne(filterDoc, document);
+            Jogo jogo = new Jogo();
+            jogo.nome = nome;
+            jogo.imagem = imagem;
+            jogo.preco = preco;
+            jogo.genero = genero;
+            jogo.faixaEtaria = faixaEtaria;
+            jogo.desenvolvedora = desenvolvedora;
+            jogo.minRequisitos = minRequisitos;
+            jogo.recRequisitos = recRequisitos;
+            jogo.descricao = descricao;
+            m_collection3.InsertOne(jogo);
+
+        }
+
+        public void mostrarJogoImg(String id, Image img)
+        {
+            try
+            {
+                Jogo _jogo = m_collection3.Find(x => x._id == new ObjectId(id)).FirstOrDefault();
+                img = BytesToImage(_jogo.imagem);
+            }catch(Exception ex)
+            {
+
+            }
+
+        }
+        public void alterarDadoCliente(ObjectId id, String nome, String senha, String email)
+        {
+            var updateDef = Builders<Cliente>.Update.Set("Nome", nome).Set("Senha", senha).Set("Email", email);
+            m_collection.UpdateOne(s => s._id == id, updateDef);
+        }
+
+        public void alterarDadoDesenvolvedora(ObjectId id, String nome, String senha, String email, String contaBanco)
+        {
+            var updateDef = Builders<Desenvolvedora>.Update.Set("Nome", nome).Set("Senha", senha).Set("Email", email).Set("contaBancaria", contaBanco);
+            m_collection2.UpdateOne(s => s._id == id, updateDef);
         }
 
         public Cliente devolverClientePorEmail(String email)

@@ -10,6 +10,7 @@ namespace Stelf
 {
     public partial class FormLoja : Form
     {
+        
         private Cliente cliente;
         private Desenvolvedora desenvolvedora;
 
@@ -18,6 +19,10 @@ namespace Stelf
             this.cliente = clienteLogado;
             this.desenvolvedora = desenvolvedoraLogada;
             InitializeComponent();
+            if (!desenvolvedora.Email.Equals("") && cliente.Email.Equals(""))
+            {
+                btnAdicionarJogo.Visible = true;
+            }
         }
 
         private void btnEditarPerfil_Click(object sender, EventArgs e)
@@ -51,6 +56,14 @@ namespace Stelf
                 lbNome.Text = cliente.Nome;
                 lbEmail.Text = cliente.Email;
             }
+        }
+
+        private void btnAdicionarJogo_Click(object sender, EventArgs e)
+        {
+            FormAddJogo frmAddJogo = new FormAddJogo(desenvolvedora);
+            frmAddJogo.Tag = this;
+            frmAddJogo.Show(this);
+            Hide();
         }
     }
 }
