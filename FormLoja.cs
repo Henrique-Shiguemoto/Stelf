@@ -72,27 +72,37 @@ namespace Stelf
             ConnectionDB barqueiro = new ConnectionDB();
             var jogos = barqueiro.getJogoList();
 
+            int linha = -1;
             for (int i = 0; i < jogos.Count; i++)
             {
-                int x = 235;
-                int y = 158;
+                int x_pic = 235;
+                int y_pic = 158;
+                int x_button = 235;
+                int y_button = 308;
                 int coluna = i % 3;
+                if (coluna == 0)
+                {
+                    linha++;
+                }
 
-                const int x_offset = 269;
-                const int y_offset_button = 150;
-                const int y_offset_picture_box = 221;
+                int x_offset = 269;
+                int y_offset_button = 150;
+                int y_offset_picture_box = 221;
 
                 var pic = new PictureBox();
-                pic.Location = new Point(x + coluna*x_offset, y + i*y_offset_picture_box);
+                pic.Location = new Point(x_pic + coluna*x_offset, y_pic + linha*y_offset_picture_box);
                 pic.Size = new Size(253, 151);
-                pic.Image = barqueiro.BytesToImage(jogos[i-1].imagem);
+                pic.Image = barqueiro.BytesToImage(jogos[i].imagem);
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Controls.Add(pic);
 
                 var button = new Button();
-                button.Text = "R$" + jogos[i].preco.ToString();
+                button.Text = "R$ " + jogos[i].preco.ToString();
                 button.BackColor = Color.LightGreen;
-                button.Location = new Point(x + coluna * x_offset, y + i * y_offset_button);
+                button.Location = new Point(x_button + coluna * x_offset, y_button + linha* y_offset_picture_box);
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderSize = 0;
+                button.Size = new Size(253, 23);
                 this.Controls.Add(button);
             }
         }
