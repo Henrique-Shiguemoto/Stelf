@@ -15,6 +15,7 @@ namespace Stelf
         IMongoCollection<Cliente> m_collection;
         IMongoCollection<Desenvolvedora> m_collection2;
         IMongoCollection<Jogo> m_collection3;
+        
         public Image BytesToImage(byte[] byteArray)
         {
             using (var ms = new MemoryStream(byteArray))
@@ -37,32 +38,32 @@ namespace Stelf
         {
             try
             {
-            Cliente cliente = new Cliente();
-            cliente.Nome = nome;
-            cliente.Senha = senha;
-            cliente.Email = email;
-            cliente.DataNascimento = dataNascimento;
-            m_collection.InsertOne(cliente);
-
+                Cliente cliente = new Cliente();
+                cliente.Nome = nome;
+                cliente.Senha = senha;
+                cliente.Email = email;
+                cliente.DataNascimento = dataNascimento;
+                m_collection.InsertOne(cliente);
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.ToString());
             }
         }
-        public void inserirDesenvolvedora(String nome, String email, String senha, String /*ContaBancaria*/ contaBancaria)
+        public void inserirDesenvolvedora(String nome, String email, String senha, String contaBancaria)
         {
             try
             {
-            Desenvolvedora desenvolvedora = new Desenvolvedora();
-            desenvolvedora.Nome = nome;
-            desenvolvedora.Senha = senha;
-            desenvolvedora.Email = email;
-            desenvolvedora.contaBancaria = contaBancaria;
-            m_collection2.InsertOne(desenvolvedora);
+                Desenvolvedora desenvolvedora = new Desenvolvedora();
+                desenvolvedora.Nome = nome;
+                desenvolvedora.Senha = senha;
+                desenvolvedora.Email = email;
+                desenvolvedora.contaBancaria = contaBancaria;
+                m_collection2.InsertOne(desenvolvedora);
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
             }
         }
 
@@ -79,7 +80,6 @@ namespace Stelf
             jogo.recRequisitos = recRequisitos;
             jogo.descricao = descricao;
             m_collection3.InsertOne(jogo);
-
         }
 
         public void mostrarJogoImg(String id, Image img)
@@ -90,7 +90,7 @@ namespace Stelf
                 img = BytesToImage(_jogo.imagem);
             }catch(Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
             }
 
         }
@@ -135,5 +135,12 @@ namespace Stelf
                 return desenvolvedora;
             }
         }
+
+        public List<Jogo> getJogoList()
+        {
+            return m_collection3.Find(new BsonDocument()).ToList();
+        }
     }
+
+    
 }

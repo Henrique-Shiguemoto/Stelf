@@ -66,12 +66,14 @@ namespace Stelf
             int faixaEt = (int)Convert.ToInt32 (faixaEtTextBox.Text);
             bool validoEt = int.TryParse(faixaEtTextBox.Text.ToString(), out faixaEt);
             barqueiro.inserirJogo(nomeTextBox.Text, ImageToBytes(imagemPictureBox.Image), preco, generoTextBox.Text, faixaEt, desenvolvedora, reqMin, reqRec, descTextBox.Text);
+            MessageBox.Show("Jogo Adicionado!");
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            ConnectionDB barqueiro = new ConnectionDB();
-            barqueiro.mostrarJogoImg(textBox1.Text, imagemPictureBox.Image);
+            var formLoja = (FormLoja)Tag;
+            formLoja.Show();
+            Close();
         }
     }
 }

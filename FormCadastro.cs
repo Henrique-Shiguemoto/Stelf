@@ -80,14 +80,9 @@ namespace Stelf
                 
                 if (devRadioBtn.Checked)
                 {
-                    //ContaBancaria conta = new ContaBancaria();
-                    //conta.banco = ;
-                    //conta.agencia = ;
-                    //conta.conta = ;
-                    //conta.nome = ;
                     if (barqueiro.devolverDesenvolvedoraPorEmail(emailTextBox.Text).Email.Equals(""))
                     {              
-                        barqueiro.inserirDesenvolvedora(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, /*tipo ContaBancaria*/ contaBancariaComboBox.Text);
+                        barqueiro.inserirDesenvolvedora(nomeTextBox.Text, emailTextBox.Text, senhaTextBox.Text, contaBancariaComboBox.Text);
                         MessageBox.Show("Nova Desenvolvedora adicionado");
                     }
                     else

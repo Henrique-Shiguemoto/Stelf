@@ -118,6 +118,7 @@ namespace Stelf
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.stelfLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(555, 318);
             this.MinimumSize = new System.Drawing.Size(555, 318);
             this.Name = "FormLauncher";

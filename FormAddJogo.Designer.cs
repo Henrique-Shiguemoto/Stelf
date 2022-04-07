@@ -29,6 +29,7 @@ namespace Stelf
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddJogo));
             this.imagemPictureBox = new System.Windows.Forms.PictureBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
@@ -60,28 +61,26 @@ namespace Stelf
             this.gpuLabel = new System.Windows.Forms.Label();
             this.redeLabel = new System.Windows.Forms.Label();
             this.discoLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.infoGeraisLabel = new System.Windows.Forms.Label();
+            this.uploadoImgLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imagemPictureBox)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imagemPictureBox
             // 
             this.imagemPictureBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.imagemPictureBox.Location = new System.Drawing.Point(456, 22);
+            this.imagemPictureBox.Location = new System.Drawing.Point(392, 91);
             this.imagemPictureBox.Name = "imagemPictureBox";
             this.imagemPictureBox.Size = new System.Drawing.Size(253, 151);
+            this.imagemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagemPictureBox.TabIndex = 0;
             this.imagemPictureBox.TabStop = false;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(423, 695);
+            this.btnConfirmar.Location = new System.Drawing.Point(306, 601);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(146, 23);
             this.btnConfirmar.TabIndex = 1;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -89,7 +88,7 @@ namespace Stelf
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(544, 190);
+            this.btnUpload.Location = new System.Drawing.Point(486, 262);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(75, 23);
             this.btnUpload.TabIndex = 2;
@@ -99,59 +98,66 @@ namespace Stelf
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(221, 695);
+            this.btnCancelar.Location = new System.Drawing.Point(499, 601);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(146, 23);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // nomeTextBox
             // 
-            this.nomeTextBox.Location = new System.Drawing.Point(249, 6);
+            this.nomeTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.nomeTextBox.Location = new System.Drawing.Point(128, 91);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(100, 23);
+            this.nomeTextBox.Size = new System.Drawing.Size(237, 23);
             this.nomeTextBox.TabIndex = 4;
             // 
             // precoTextBox
             // 
-            this.precoTextBox.Location = new System.Drawing.Point(249, 44);
+            this.precoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.precoTextBox.Location = new System.Drawing.Point(128, 131);
             this.precoTextBox.Name = "precoTextBox";
-            this.precoTextBox.Size = new System.Drawing.Size(100, 23);
+            this.precoTextBox.Size = new System.Drawing.Size(237, 23);
             this.precoTextBox.TabIndex = 5;
             // 
             // generoTextBox
             // 
-            this.generoTextBox.Location = new System.Drawing.Point(249, 91);
+            this.generoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.generoTextBox.Location = new System.Drawing.Point(128, 171);
             this.generoTextBox.Name = "generoTextBox";
-            this.generoTextBox.Size = new System.Drawing.Size(100, 23);
+            this.generoTextBox.Size = new System.Drawing.Size(237, 23);
             this.generoTextBox.TabIndex = 6;
             // 
             // faixaEtTextBox
             // 
-            this.faixaEtTextBox.Location = new System.Drawing.Point(249, 135);
+            this.faixaEtTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.faixaEtTextBox.Location = new System.Drawing.Point(128, 211);
             this.faixaEtTextBox.Name = "faixaEtTextBox";
-            this.faixaEtTextBox.Size = new System.Drawing.Size(100, 23);
+            this.faixaEtTextBox.Size = new System.Drawing.Size(237, 23);
             this.faixaEtTextBox.TabIndex = 7;
             // 
             // descTextBox
             // 
-            this.descTextBox.Location = new System.Drawing.Point(249, 172);
+            this.descTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.descTextBox.Location = new System.Drawing.Point(128, 251);
             this.descTextBox.Name = "descTextBox";
-            this.descTextBox.Size = new System.Drawing.Size(100, 23);
+            this.descTextBox.Size = new System.Drawing.Size(237, 23);
             this.descTextBox.TabIndex = 8;
             // 
             // reqMinRamTextBox
             // 
-            this.reqMinRamTextBox.Location = new System.Drawing.Point(148, 317);
+            this.reqMinRamTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinRamTextBox.Location = new System.Drawing.Point(191, 351);
             this.reqMinRamTextBox.Name = "reqMinRamTextBox";
-            this.reqMinRamTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqMinRamTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqMinRamTextBox.TabIndex = 9;
             // 
             // nomeLabel
             // 
             this.nomeLabel.AutoSize = true;
-            this.nomeLabel.Location = new System.Drawing.Point(197, 9);
+            this.nomeLabel.Location = new System.Drawing.Point(28, 94);
             this.nomeLabel.Name = "nomeLabel";
             this.nomeLabel.Size = new System.Drawing.Size(46, 15);
             this.nomeLabel.TabIndex = 10;
@@ -160,7 +166,7 @@ namespace Stelf
             // precoLabel
             // 
             this.precoLabel.AutoSize = true;
-            this.precoLabel.Location = new System.Drawing.Point(200, 44);
+            this.precoLabel.Location = new System.Drawing.Point(28, 134);
             this.precoLabel.Name = "precoLabel";
             this.precoLabel.Size = new System.Drawing.Size(43, 15);
             this.precoLabel.TabIndex = 11;
@@ -169,7 +175,7 @@ namespace Stelf
             // generoLabel
             // 
             this.generoLabel.AutoSize = true;
-            this.generoLabel.Location = new System.Drawing.Point(192, 99);
+            this.generoLabel.Location = new System.Drawing.Point(28, 174);
             this.generoLabel.Name = "generoLabel";
             this.generoLabel.Size = new System.Drawing.Size(51, 15);
             this.generoLabel.TabIndex = 12;
@@ -178,7 +184,7 @@ namespace Stelf
             // faixaEtLabel
             // 
             this.faixaEtLabel.AutoSize = true;
-            this.faixaEtLabel.Location = new System.Drawing.Point(176, 143);
+            this.faixaEtLabel.Location = new System.Drawing.Point(28, 214);
             this.faixaEtLabel.Name = "faixaEtLabel";
             this.faixaEtLabel.Size = new System.Drawing.Size(72, 15);
             this.faixaEtLabel.TabIndex = 13;
@@ -187,7 +193,7 @@ namespace Stelf
             // descLabel
             // 
             this.descLabel.AutoSize = true;
-            this.descLabel.Location = new System.Drawing.Point(184, 180);
+            this.descLabel.Location = new System.Drawing.Point(28, 254);
             this.descLabel.Name = "descLabel";
             this.descLabel.Size = new System.Drawing.Size(64, 15);
             this.descLabel.TabIndex = 14;
@@ -196,25 +202,27 @@ namespace Stelf
             // reqMinLabel
             // 
             this.reqMinLabel.AutoSize = true;
-            this.reqMinLabel.Location = new System.Drawing.Point(148, 278);
+            this.reqMinLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.reqMinLabel.Location = new System.Drawing.Point(208, 311);
             this.reqMinLabel.Name = "reqMinLabel";
-            this.reqMinLabel.Size = new System.Drawing.Size(85, 15);
+            this.reqMinLabel.Size = new System.Drawing.Size(147, 21);
             this.reqMinLabel.TabIndex = 15;
-            this.reqMinLabel.Text = "Requisitos min";
+            this.reqMinLabel.Text = "Requisitos Minímos";
             // 
             // reqRecLabel
             // 
             this.reqRecLabel.AutoSize = true;
-            this.reqRecLabel.Location = new System.Drawing.Point(254, 278);
+            this.reqRecLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.reqRecLabel.Location = new System.Drawing.Point(431, 311);
             this.reqRecLabel.Name = "reqRecLabel";
-            this.reqRecLabel.Size = new System.Drawing.Size(143, 15);
+            this.reqRecLabel.Size = new System.Drawing.Size(193, 21);
             this.reqRecLabel.TabIndex = 16;
-            this.reqRecLabel.Text = "Requisitos recomendados";
+            this.reqRecLabel.Text = "Requisitos Recomendados";
             // 
             // ramLabel
             // 
             this.ramLabel.AutoSize = true;
-            this.ramLabel.Location = new System.Drawing.Point(84, 317);
+            this.ramLabel.Location = new System.Drawing.Point(28, 351);
             this.ramLabel.Name = "ramLabel";
             this.ramLabel.Size = new System.Drawing.Size(39, 15);
             this.ramLabel.TabIndex = 17;
@@ -222,71 +230,80 @@ namespace Stelf
             // 
             // reqRecRamTextBox
             // 
-            this.reqRecRamTextBox.Location = new System.Drawing.Point(281, 314);
+            this.reqRecRamTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecRamTextBox.Location = new System.Drawing.Point(433, 351);
             this.reqRecRamTextBox.Name = "reqRecRamTextBox";
-            this.reqRecRamTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqRecRamTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqRecRamTextBox.TabIndex = 18;
             // 
             // reqMinProcTextBox
             // 
-            this.reqMinProcTextBox.Location = new System.Drawing.Point(148, 361);
+            this.reqMinProcTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinProcTextBox.Location = new System.Drawing.Point(191, 393);
             this.reqMinProcTextBox.Name = "reqMinProcTextBox";
-            this.reqMinProcTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqMinProcTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqMinProcTextBox.TabIndex = 19;
             // 
             // reqRecProcTextBox
             // 
-            this.reqRecProcTextBox.Location = new System.Drawing.Point(281, 361);
+            this.reqRecProcTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecProcTextBox.Location = new System.Drawing.Point(433, 393);
             this.reqRecProcTextBox.Name = "reqRecProcTextBox";
-            this.reqRecProcTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqRecProcTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqRecProcTextBox.TabIndex = 20;
             // 
             // reqMinGpuTextBox
             // 
-            this.reqMinGpuTextBox.Location = new System.Drawing.Point(148, 408);
+            this.reqMinGpuTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinGpuTextBox.Location = new System.Drawing.Point(191, 440);
             this.reqMinGpuTextBox.Name = "reqMinGpuTextBox";
-            this.reqMinGpuTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqMinGpuTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqMinGpuTextBox.TabIndex = 21;
             // 
             // reqRecGpuTextBox
             // 
-            this.reqRecGpuTextBox.Location = new System.Drawing.Point(281, 408);
+            this.reqRecGpuTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecGpuTextBox.Location = new System.Drawing.Point(433, 440);
             this.reqRecGpuTextBox.Name = "reqRecGpuTextBox";
-            this.reqRecGpuTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqRecGpuTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqRecGpuTextBox.TabIndex = 22;
             // 
             // reqMinRedeTextBox
             // 
-            this.reqMinRedeTextBox.Location = new System.Drawing.Point(148, 460);
+            this.reqMinRedeTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinRedeTextBox.Location = new System.Drawing.Point(191, 492);
             this.reqMinRedeTextBox.Name = "reqMinRedeTextBox";
-            this.reqMinRedeTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqMinRedeTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqMinRedeTextBox.TabIndex = 23;
             // 
             // reqRecRedeTextBox
             // 
-            this.reqRecRedeTextBox.Location = new System.Drawing.Point(281, 460);
+            this.reqRecRedeTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecRedeTextBox.Location = new System.Drawing.Point(433, 492);
             this.reqRecRedeTextBox.Name = "reqRecRedeTextBox";
-            this.reqRecRedeTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqRecRedeTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqRecRedeTextBox.TabIndex = 24;
             // 
             // reqMinDiscoTextBox
             // 
-            this.reqMinDiscoTextBox.Location = new System.Drawing.Point(148, 506);
+            this.reqMinDiscoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinDiscoTextBox.Location = new System.Drawing.Point(191, 538);
             this.reqMinDiscoTextBox.Name = "reqMinDiscoTextBox";
-            this.reqMinDiscoTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqMinDiscoTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqMinDiscoTextBox.TabIndex = 25;
             // 
             // reqRecDiscoTextBox
             // 
-            this.reqRecDiscoTextBox.Location = new System.Drawing.Point(281, 506);
+            this.reqRecDiscoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecDiscoTextBox.Location = new System.Drawing.Point(433, 538);
             this.reqRecDiscoTextBox.Name = "reqRecDiscoTextBox";
-            this.reqRecDiscoTextBox.Size = new System.Drawing.Size(100, 23);
+            this.reqRecDiscoTextBox.Size = new System.Drawing.Size(185, 23);
             this.reqRecDiscoTextBox.TabIndex = 26;
             // 
             // processadorLabel
             // 
             this.processadorLabel.AutoSize = true;
-            this.processadorLabel.Location = new System.Drawing.Point(65, 364);
+            this.processadorLabel.Location = new System.Drawing.Point(28, 395);
             this.processadorLabel.Name = "processadorLabel";
             this.processadorLabel.Size = new System.Drawing.Size(77, 15);
             this.processadorLabel.TabIndex = 27;
@@ -295,7 +312,7 @@ namespace Stelf
             // gpuLabel
             // 
             this.gpuLabel.AutoSize = true;
-            this.gpuLabel.Location = new System.Drawing.Point(53, 416);
+            this.gpuLabel.Location = new System.Drawing.Point(28, 445);
             this.gpuLabel.Name = "gpuLabel";
             this.gpuLabel.Size = new System.Drawing.Size(89, 15);
             this.gpuLabel.TabIndex = 28;
@@ -304,7 +321,7 @@ namespace Stelf
             // redeLabel
             // 
             this.redeLabel.AutoSize = true;
-            this.redeLabel.Location = new System.Drawing.Point(103, 463);
+            this.redeLabel.Location = new System.Drawing.Point(28, 497);
             this.redeLabel.Name = "redeLabel";
             this.redeLabel.Size = new System.Drawing.Size(39, 15);
             this.redeLabel.TabIndex = 29;
@@ -313,56 +330,40 @@ namespace Stelf
             // discoLabel
             // 
             this.discoLabel.AutoSize = true;
-            this.discoLabel.Location = new System.Drawing.Point(41, 509);
+            this.discoLabel.Location = new System.Drawing.Point(28, 540);
             this.discoLabel.Name = "discoLabel";
             this.discoLabel.Size = new System.Drawing.Size(101, 15);
             this.discoLabel.TabIndex = 30;
             this.discoLabel.Text = "Espaço em disco :";
             // 
-            // groupBox1
+            // infoGeraisLabel
             // 
-            this.groupBox1.Controls.Add(this.btnLoad);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(509, 262);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.infoGeraisLabel.AutoSize = true;
+            this.infoGeraisLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.infoGeraisLabel.Location = new System.Drawing.Point(181, 48);
+            this.infoGeraisLabel.Name = "infoGeraisLabel";
+            this.infoGeraisLabel.Size = new System.Drawing.Size(144, 21);
+            this.infoGeraisLabel.TabIndex = 31;
+            this.infoGeraisLabel.Text = "Informações Gerais";
             // 
-            // btnLoad
+            // uploadoImgLabel
             // 
-            this.btnLoad.Location = new System.Drawing.Point(35, 69);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLoad.TabIndex = 1;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 0;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(576, 378);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 32;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.uploadoImgLabel.AutoSize = true;
+            this.uploadoImgLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uploadoImgLabel.Location = new System.Drawing.Point(453, 48);
+            this.uploadoImgLabel.Name = "uploadoImgLabel";
+            this.uploadoImgLabel.Size = new System.Drawing.Size(126, 21);
+            this.uploadoImgLabel.TabIndex = 32;
+            this.uploadoImgLabel.Text = "Imagem do Jogo";
             // 
             // FormAddJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 749);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(673, 636);
+            this.Controls.Add(this.uploadoImgLabel);
+            this.Controls.Add(this.infoGeraisLabel);
             this.Controls.Add(this.discoLabel);
             this.Controls.Add(this.redeLabel);
             this.Controls.Add(this.gpuLabel);
@@ -394,11 +395,14 @@ namespace Stelf
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.imagemPictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(689, 675);
+            this.MinimumSize = new System.Drawing.Size(689, 675);
             this.Name = "FormAddJogo";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Upload Jogo";
             ((System.ComponentModel.ISupportInitialize)(this.imagemPictureBox)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,9 +441,7 @@ namespace Stelf
         private System.Windows.Forms.Label gpuLabel;
         private System.Windows.Forms.Label redeLabel;
         private System.Windows.Forms.Label discoLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label infoGeraisLabel;
+        private System.Windows.Forms.Label uploadoImgLabel;
     }
 }

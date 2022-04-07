@@ -139,6 +139,7 @@ namespace Stelf
             this.Controls.Add(this.nomeClienteAlterarDadosLabel);
             this.Controls.Add(this.alterarDadosClienteLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(447, 465);
             this.MinimumSize = new System.Drawing.Size(447, 465);
             this.Name = "FormAlterarDadosCliente";
