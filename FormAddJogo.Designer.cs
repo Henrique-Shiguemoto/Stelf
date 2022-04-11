@@ -37,7 +37,6 @@ namespace Stelf
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.precoTextBox = new System.Windows.Forms.TextBox();
             this.generoTextBox = new System.Windows.Forms.TextBox();
-            this.faixaEtTextBox = new System.Windows.Forms.TextBox();
             this.descTextBox = new System.Windows.Forms.TextBox();
             this.reqMinRamTextBox = new System.Windows.Forms.TextBox();
             this.nomeLabel = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@ namespace Stelf
             this.discoLabel = new System.Windows.Forms.Label();
             this.infoGeraisLabel = new System.Windows.Forms.Label();
             this.uploadoImgLabel = new System.Windows.Forms.Label();
+            this.comboBoxFaixaEtaria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.imagemPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,49 +109,46 @@ namespace Stelf
             // nomeTextBox
             // 
             this.nomeTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.nomeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nomeTextBox.Location = new System.Drawing.Point(128, 91);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(237, 23);
+            this.nomeTextBox.Size = new System.Drawing.Size(237, 16);
             this.nomeTextBox.TabIndex = 4;
             // 
             // precoTextBox
             // 
             this.precoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.precoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.precoTextBox.Location = new System.Drawing.Point(128, 131);
             this.precoTextBox.Name = "precoTextBox";
-            this.precoTextBox.Size = new System.Drawing.Size(237, 23);
+            this.precoTextBox.Size = new System.Drawing.Size(237, 16);
             this.precoTextBox.TabIndex = 5;
             // 
             // generoTextBox
             // 
             this.generoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.generoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.generoTextBox.Location = new System.Drawing.Point(128, 171);
             this.generoTextBox.Name = "generoTextBox";
-            this.generoTextBox.Size = new System.Drawing.Size(237, 23);
+            this.generoTextBox.Size = new System.Drawing.Size(237, 16);
             this.generoTextBox.TabIndex = 6;
-            // 
-            // faixaEtTextBox
-            // 
-            this.faixaEtTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.faixaEtTextBox.Location = new System.Drawing.Point(128, 211);
-            this.faixaEtTextBox.Name = "faixaEtTextBox";
-            this.faixaEtTextBox.Size = new System.Drawing.Size(237, 23);
-            this.faixaEtTextBox.TabIndex = 7;
             // 
             // descTextBox
             // 
             this.descTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.descTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.descTextBox.Location = new System.Drawing.Point(128, 251);
             this.descTextBox.Name = "descTextBox";
-            this.descTextBox.Size = new System.Drawing.Size(237, 23);
+            this.descTextBox.Size = new System.Drawing.Size(237, 16);
             this.descTextBox.TabIndex = 8;
             // 
             // reqMinRamTextBox
             // 
             this.reqMinRamTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinRamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqMinRamTextBox.Location = new System.Drawing.Point(191, 351);
             this.reqMinRamTextBox.Name = "reqMinRamTextBox";
-            this.reqMinRamTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqMinRamTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqMinRamTextBox.TabIndex = 9;
             // 
             // nomeLabel
@@ -224,80 +221,89 @@ namespace Stelf
             this.ramLabel.AutoSize = true;
             this.ramLabel.Location = new System.Drawing.Point(28, 351);
             this.ramLabel.Name = "ramLabel";
-            this.ramLabel.Size = new System.Drawing.Size(39, 15);
+            this.ramLabel.Size = new System.Drawing.Size(62, 15);
             this.ramLabel.TabIndex = 17;
-            this.ramLabel.Text = "RAM :";
+            this.ramLabel.Text = "RAM (GB):";
             // 
             // reqRecRamTextBox
             // 
             this.reqRecRamTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecRamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqRecRamTextBox.Location = new System.Drawing.Point(433, 351);
             this.reqRecRamTextBox.Name = "reqRecRamTextBox";
-            this.reqRecRamTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqRecRamTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqRecRamTextBox.TabIndex = 18;
             // 
             // reqMinProcTextBox
             // 
             this.reqMinProcTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinProcTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqMinProcTextBox.Location = new System.Drawing.Point(191, 393);
             this.reqMinProcTextBox.Name = "reqMinProcTextBox";
-            this.reqMinProcTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqMinProcTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqMinProcTextBox.TabIndex = 19;
             // 
             // reqRecProcTextBox
             // 
             this.reqRecProcTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecProcTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqRecProcTextBox.Location = new System.Drawing.Point(433, 393);
             this.reqRecProcTextBox.Name = "reqRecProcTextBox";
-            this.reqRecProcTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqRecProcTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqRecProcTextBox.TabIndex = 20;
             // 
             // reqMinGpuTextBox
             // 
             this.reqMinGpuTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinGpuTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqMinGpuTextBox.Location = new System.Drawing.Point(191, 440);
             this.reqMinGpuTextBox.Name = "reqMinGpuTextBox";
-            this.reqMinGpuTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqMinGpuTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqMinGpuTextBox.TabIndex = 21;
             // 
             // reqRecGpuTextBox
             // 
             this.reqRecGpuTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecGpuTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqRecGpuTextBox.Location = new System.Drawing.Point(433, 440);
             this.reqRecGpuTextBox.Name = "reqRecGpuTextBox";
-            this.reqRecGpuTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqRecGpuTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqRecGpuTextBox.TabIndex = 22;
             // 
             // reqMinRedeTextBox
             // 
             this.reqMinRedeTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinRedeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqMinRedeTextBox.Location = new System.Drawing.Point(191, 492);
             this.reqMinRedeTextBox.Name = "reqMinRedeTextBox";
-            this.reqMinRedeTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqMinRedeTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqMinRedeTextBox.TabIndex = 23;
             // 
             // reqRecRedeTextBox
             // 
             this.reqRecRedeTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecRedeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqRecRedeTextBox.Location = new System.Drawing.Point(433, 492);
             this.reqRecRedeTextBox.Name = "reqRecRedeTextBox";
-            this.reqRecRedeTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqRecRedeTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqRecRedeTextBox.TabIndex = 24;
             // 
             // reqMinDiscoTextBox
             // 
             this.reqMinDiscoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqMinDiscoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqMinDiscoTextBox.Location = new System.Drawing.Point(191, 538);
             this.reqMinDiscoTextBox.Name = "reqMinDiscoTextBox";
-            this.reqMinDiscoTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqMinDiscoTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqMinDiscoTextBox.TabIndex = 25;
             // 
             // reqRecDiscoTextBox
             // 
             this.reqRecDiscoTextBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.reqRecDiscoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reqRecDiscoTextBox.Location = new System.Drawing.Point(433, 538);
             this.reqRecDiscoTextBox.Name = "reqRecDiscoTextBox";
-            this.reqRecDiscoTextBox.Size = new System.Drawing.Size(185, 23);
+            this.reqRecDiscoTextBox.Size = new System.Drawing.Size(185, 16);
             this.reqRecDiscoTextBox.TabIndex = 26;
             // 
             // processadorLabel
@@ -323,18 +329,18 @@ namespace Stelf
             this.redeLabel.AutoSize = true;
             this.redeLabel.Location = new System.Drawing.Point(28, 497);
             this.redeLabel.Name = "redeLabel";
-            this.redeLabel.Size = new System.Drawing.Size(39, 15);
+            this.redeLabel.Size = new System.Drawing.Size(77, 15);
             this.redeLabel.TabIndex = 29;
-            this.redeLabel.Text = "Rede :";
+            this.redeLabel.Text = "Rede (Mbps):";
             // 
             // discoLabel
             // 
             this.discoLabel.AutoSize = true;
             this.discoLabel.Location = new System.Drawing.Point(28, 540);
             this.discoLabel.Name = "discoLabel";
-            this.discoLabel.Size = new System.Drawing.Size(101, 15);
+            this.discoLabel.Size = new System.Drawing.Size(127, 15);
             this.discoLabel.TabIndex = 30;
-            this.discoLabel.Text = "Espaço em disco :";
+            this.discoLabel.Text = "Espaço em disco (GB) :";
             // 
             // infoGeraisLabel
             // 
@@ -356,12 +362,29 @@ namespace Stelf
             this.uploadoImgLabel.TabIndex = 32;
             this.uploadoImgLabel.Text = "Imagem do Jogo";
             // 
+            // comboBoxFaixaEtaria
+            // 
+            this.comboBoxFaixaEtaria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFaixaEtaria.FormattingEnabled = true;
+            this.comboBoxFaixaEtaria.Items.AddRange(new object[] {
+            "Livre",
+            "10",
+            "12",
+            "14",
+            "16",
+            "18"});
+            this.comboBoxFaixaEtaria.Location = new System.Drawing.Point(128, 205);
+            this.comboBoxFaixaEtaria.Name = "comboBoxFaixaEtaria";
+            this.comboBoxFaixaEtaria.Size = new System.Drawing.Size(237, 23);
+            this.comboBoxFaixaEtaria.TabIndex = 33;
+            // 
             // FormAddJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(673, 636);
+            this.Controls.Add(this.comboBoxFaixaEtaria);
             this.Controls.Add(this.uploadoImgLabel);
             this.Controls.Add(this.infoGeraisLabel);
             this.Controls.Add(this.discoLabel);
@@ -387,7 +410,6 @@ namespace Stelf
             this.Controls.Add(this.nomeLabel);
             this.Controls.Add(this.reqMinRamTextBox);
             this.Controls.Add(this.descTextBox);
-            this.Controls.Add(this.faixaEtTextBox);
             this.Controls.Add(this.generoTextBox);
             this.Controls.Add(this.precoTextBox);
             this.Controls.Add(this.nomeTextBox);
@@ -417,7 +439,6 @@ namespace Stelf
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox precoTextBox;
         private System.Windows.Forms.TextBox generoTextBox;
-        private System.Windows.Forms.TextBox faixaEtTextBox;
         private System.Windows.Forms.TextBox descTextBox;
         private System.Windows.Forms.TextBox reqMinRamTextBox;
         private System.Windows.Forms.Label nomeLabel;
@@ -443,5 +464,6 @@ namespace Stelf
         private System.Windows.Forms.Label discoLabel;
         private System.Windows.Forms.Label infoGeraisLabel;
         private System.Windows.Forms.Label uploadoImgLabel;
+        private System.Windows.Forms.ComboBox comboBoxFaixaEtaria;
     }
 }

@@ -124,7 +124,7 @@ namespace Stelf
             // btnLoja
             // 
             this.btnLoja.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLoja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnLoja.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnLoja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLoja.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLoja.FlatAppearance.BorderSize = 0;

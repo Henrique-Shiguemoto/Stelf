@@ -12,8 +12,6 @@ namespace Stelf
 
         public static bool emailIsValid(string email)
         {
-
-            //@gmail.com, @outlook.com, @hotmail.com (uma ideia)
             try
             {
                 if (!(email.EndsWith(".com") || email.EndsWith(".br")))
@@ -73,6 +71,52 @@ namespace Stelf
                 return false;
             }
             return true;
+        }
+
+        public static bool jogoIsValid(String preco, String faixaEtaria, Requisitos minRequisitos, Requisitos recRequisitos)
+        {
+            bool valid = true;
+
+            bool isMinReqValid = isRequisitosValid(minRequisitos);
+            bool isRecReqValid = isRequisitosValid(recRequisitos);
+            bool isFaixaEtariaValid = !faixaEtaria.Equals("");
+
+            bool isPrecoValid = true;
+            try
+            {
+                float preco_float = float.Parse(preco);
+                if (preco_float < 0)
+                {
+                    isPrecoValid = false;
+                }
+            }
+            catch
+            {
+                isPrecoValid = false;
+            }
+
+            if (!isMinReqValid || !isRecReqValid || !isFaixaEtariaValid || !isPrecoValid)
+            {
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        public static bool isRequisitosValid(Requisitos req)
+        {
+            try
+            {
+                Requisitos requisitos = new Requisitos();
+                float ram = float.Parse(req.ram);
+                float espDisc = float.Parse(req.espacoDisco);
+                float rede = float.Parse(req.rede);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

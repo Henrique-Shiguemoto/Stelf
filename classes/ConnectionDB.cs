@@ -67,7 +67,7 @@ namespace Stelf
             }
         }
 
-        public void inserirJogo(String nome, byte[] imagem,float preco, String genero, int faixaEtaria, Desenvolvedora desenvolvedora, Requisitos minRequisitos, Requisitos recRequisitos, String descricao)
+        public void inserirJogo(String nome, byte[] imagem, float preco, String genero, int faixaEtaria, Desenvolvedora desenvolvedora, Requisitos minRequisitos, Requisitos recRequisitos, String descricao)
         {
             Jogo jogo = new Jogo();
             jogo.nome = nome;

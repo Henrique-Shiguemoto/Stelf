@@ -75,9 +75,13 @@ namespace Stelf
 
         private void FormLoja_VisibleChanged(object sender, EventArgs e)
         {
-            ConnectionDB barqueiro = new ConnectionDB();
-            this.jogos = barqueiro.getJogoList();
-            constroiJogosLoja(jogos);
+            if (this.Visible == true)
+            {
+                panelJogos.Controls.Clear();
+                ConnectionDB barqueiro = new ConnectionDB();
+                this.jogos = barqueiro.getJogoList();
+                constroiJogosLoja(jogos);
+            }
         }
 
         private void constroiJogosLoja(List<Jogo> jogosLoja)
@@ -129,7 +133,7 @@ namespace Stelf
             else
             {
                 List<Jogo> jogosFiltrados = new List<Jogo>();
-
+                bool validSearch = true;
                 switch (filtro)
                 {
                     case "Nome":
@@ -153,19 +157,36 @@ namespace Stelf
                     case "Faixa Etária":
                         foreach (Jogo jogo in this.jogos)
                         {
-                            if (jogo.faixaEtaria.Equals(Int32.Parse(textBoxBusca.Text)))
+                            try
                             {
-                                jogosFiltrados.Add(jogo);
+                                int faixaEt = Int32.Parse(textBoxBusca.Text);
+                                if (jogo.faixaEtaria.Equals(faixaEt))
+                                {
+                                    jogosFiltrados.Add(jogo);
+                                }
+                            }
+                            catch
+                            {
+                                validSearch = false;
                             }
                         }
                     break;
                     case "Preço":
                         foreach (Jogo jogo in this.jogos)
                         {
-                            if (jogo.preco.Equals(float.Parse(textBoxBusca.Text)))
+                            try
                             {
-                                jogosFiltrados.Add(jogo);
+                                float valor_preco = float.Parse(textBoxBusca.Text);
+                                if (jogo.preco.Equals(valor_preco))
+                                {
+                                    jogosFiltrados.Add(jogo);
+                                }
                             }
+                            catch
+                            {
+                                validSearch = false;
+                            }
+                            
                         }
                     break;
                     case "Gênero":
@@ -178,8 +199,12 @@ namespace Stelf
                         }
                     break;
                 }
-                panelJogos.Controls.Clear();
-                constroiJogosLoja(jogosFiltrados);
+
+                if (validSearch)
+                {
+                    panelJogos.Controls.Clear();
+                    constroiJogosLoja(jogosFiltrados);
+                }
             }
         }
     }

@@ -54,19 +54,41 @@ namespace Stelf
             reqMin.placaVideo = reqMinGpuTextBox.Text;
             reqMin.rede = reqMinRedeTextBox.Text;
             reqMin.espacoDisco = reqMinDiscoTextBox.Text;
+            
             Requisitos reqRec = new Requisitos();
             reqRec.ram = reqRecRamTextBox.Text;
             reqRec.processador = reqRecProcTextBox.Text;
             reqRec.placaVideo = reqRecGpuTextBox.Text;
             reqRec.rede = reqRecRedeTextBox.Text;
             reqRec.espacoDisco = reqRecDiscoTextBox.Text;
-            ConnectionDB barqueiro = new ConnectionDB();
-            float preco = (float)Convert.ToDouble(precoTextBox.Text);
-            bool validoPreco = float.TryParse(precoTextBox.Text.ToString(), out preco);
-            int faixaEt = (int)Convert.ToInt32 (faixaEtTextBox.Text);
-            bool validoEt = int.TryParse(faixaEtTextBox.Text.ToString(), out faixaEt);
-            barqueiro.inserirJogo(nomeTextBox.Text, ImageToBytes(imagemPictureBox.Image), preco, generoTextBox.Text, faixaEt, desenvolvedora, reqMin, reqRec, descTextBox.Text);
-            MessageBox.Show("Jogo Adicionado!");
+            
+            if (imagemPictureBox.Image != null && Validator.jogoIsValid(precoTextBox.Text, comboBoxFaixaEtaria.Text, reqMin, reqRec))
+            {
+                ConnectionDB barqueiro = new ConnectionDB();
+                float preco = float.Parse(precoTextBox.Text);
+                int faixaEt = 0;
+
+                if (comboBoxFaixaEtaria.Text.Equals("Livre"))
+                {
+                    faixaEt = 0;
+                }
+                else
+                {
+                    faixaEt = int.Parse(comboBoxFaixaEtaria.Text);
+                }
+
+
+                barqueiro.inserirJogo(nomeTextBox.Text, ImageToBytes(imagemPictureBox.Image), preco, generoTextBox.Text, faixaEt, desenvolvedora, reqMin, reqRec, descTextBox.Text);
+                MessageBox.Show("Jogo Adicionado!");
+                
+                var formLoja = (FormLoja)Tag;
+                formLoja.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Campos inválidos! Cheque as informações digitadas novamente.");
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
