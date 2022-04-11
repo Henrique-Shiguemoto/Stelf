@@ -81,6 +81,7 @@ namespace Stelf
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(20, 182);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(495, 23);
             this.passwordTextBox.TabIndex = 4;
             // 
