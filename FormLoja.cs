@@ -29,6 +29,7 @@ namespace Stelf
             {
                 btnAdicionarJogo.Visible = true;
             }
+            Carrega_Dados_Login();
         }
 
         private void btnEditarPerfil_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Stelf
             Close();
         }
 
-        private void panelConteudo_VisibleChanged(object sender, EventArgs e)
+        private void Carrega_Dados_Login()
         {
             if (cliente.Email.Equals(""))
             {
