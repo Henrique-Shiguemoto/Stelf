@@ -44,6 +44,7 @@ namespace Stelf
             this.btnBuscar = new System.Windows.Forms.Button();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
+            this.panelJogos = new System.Windows.Forms.Panel();
             this.panelPrincipal.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -225,6 +226,15 @@ namespace Stelf
             this.comboBoxFiltro.Size = new System.Drawing.Size(164, 23);
             this.comboBoxFiltro.TabIndex = 7;
             // 
+            // panelJogos
+            // 
+            this.panelJogos.AutoScroll = true;
+            this.panelJogos.BackColor = System.Drawing.Color.Gray;
+            this.panelJogos.Location = new System.Drawing.Point(220, 121);
+            this.panelJogos.Name = "panelJogos";
+            this.panelJogos.Size = new System.Drawing.Size(831, 463);
+            this.panelJogos.TabIndex = 8;
+            // 
             // FormLoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -232,6 +242,7 @@ namespace Stelf
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1063, 596);
+            this.Controls.Add(this.panelJogos);
             this.Controls.Add(this.comboBoxFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.labelTitulo);
@@ -268,5 +279,6 @@ namespace Stelf
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBoxFiltro;
+        private System.Windows.Forms.Panel panelJogos;
     }
 }

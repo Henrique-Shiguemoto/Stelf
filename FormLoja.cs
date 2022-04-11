@@ -85,7 +85,7 @@ namespace Stelf
             ConnectionDB barqueiro = new ConnectionDB();
 
             int linha = -1;
-            for (int i = 0; i < jogos.Count; i++)
+            for (int i = 0; i < jogosLoja.Count; i++)
             {
                 int x_pic = 235;
                 int y_pic = 158;
@@ -101,20 +101,20 @@ namespace Stelf
                 int y_offset_picture_box = 221;
 
                 var pic = new PictureBox();
-                pic.Location = new Point(x_pic + coluna * x_offset, y_pic + linha * y_offset_picture_box);
+                pic.Location = new Point(x_pic + (coluna * x_offset) - panelJogos.Location.X, y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y);
                 pic.Size = new Size(253, 151);
-                pic.Image = barqueiro.BytesToImage(jogos[i].imagem);
+                pic.Image = barqueiro.BytesToImage(jogosLoja[i].imagem);
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.Controls.Add(pic);
+                panelJogos.Controls.Add(pic);
 
                 var button = new Button();
-                button.Text = "R$ " + jogos[i].preco.ToString();
+                button.Text = "R$ " + jogosLoja[i].preco.ToString();
                 button.BackColor = Color.LightGreen;
-                button.Location = new Point(x_button + coluna * x_offset, y_button + linha * y_offset_picture_box);
+                button.Location = new Point(x_button + (coluna * x_offset) - panelJogos.Location.X, y_button + (linha * y_offset_picture_box) - panelJogos.Location.Y);
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.BorderSize = 0;
                 button.Size = new Size(253, 23);
-                this.Controls.Add(button);
+                panelJogos.Controls.Add(button);
             }
         }
 
@@ -144,7 +144,7 @@ namespace Stelf
                     case "Desenvolvedora":
                         foreach (Jogo jogo in this.jogos)
                         {
-                            if (jogo.desenvolvedora.Equals(textBoxBusca.Text))
+                            if (jogo.desenvolvedora.Nome.Equals(textBoxBusca.Text))
                             {
                                 jogosFiltrados.Add(jogo);
                             }
@@ -153,7 +153,7 @@ namespace Stelf
                     case "Faixa Etária":
                         foreach (Jogo jogo in this.jogos)
                         {
-                            if (jogo.faixaEtaria.Equals(textBoxBusca.Text))
+                            if (jogo.faixaEtaria.Equals(Int32.Parse(textBoxBusca.Text)))
                             {
                                 jogosFiltrados.Add(jogo);
                             }
@@ -162,7 +162,7 @@ namespace Stelf
                     case "Preço":
                         foreach (Jogo jogo in this.jogos)
                         {
-                            if (jogo.preco.Equals(textBoxBusca.Text))
+                            if (jogo.preco.Equals(float.Parse(textBoxBusca.Text)))
                             {
                                 jogosFiltrados.Add(jogo);
                             }
@@ -178,6 +178,7 @@ namespace Stelf
                         }
                     break;
                 }
+                panelJogos.Controls.Clear();
                 constroiJogosLoja(jogosFiltrados);
             }
         }
