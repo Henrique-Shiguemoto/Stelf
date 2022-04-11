@@ -43,6 +43,7 @@ namespace Stelf
             this.textBoxBusca = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.labelTitulo = new System.Windows.Forms.Label();
+            this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.panelPrincipal.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -191,12 +192,13 @@ namespace Stelf
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(912, 73);
+            this.btnBuscar.Location = new System.Drawing.Point(912, 72);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(120, 23);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // labelTitulo
             // 
@@ -208,12 +210,29 @@ namespace Stelf
             this.labelTitulo.TabIndex = 0;
             this.labelTitulo.Text = "L O J A";
             // 
+            // comboBoxFiltro
+            // 
+            this.comboBoxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFiltro.FormattingEnabled = true;
+            this.comboBoxFiltro.Items.AddRange(new object[] {
+            "Nome",
+            "Desenvolvedora",
+            "Faixa Etária",
+            "Preço",
+            "Gênero"});
+            this.comboBoxFiltro.Location = new System.Drawing.Point(742, 72);
+            this.comboBoxFiltro.Name = "comboBoxFiltro";
+            this.comboBoxFiltro.Size = new System.Drawing.Size(164, 23);
+            this.comboBoxFiltro.TabIndex = 7;
+            // 
             // FormLoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1063, 596);
+            this.Controls.Add(this.comboBoxFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.textBoxBusca);
@@ -248,5 +267,6 @@ namespace Stelf
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBoxFiltro;
     }
 }

@@ -14,11 +14,16 @@ namespace Stelf
         
         private Cliente cliente;
         private Desenvolvedora desenvolvedora;
+        private List<Jogo> jogos;
 
         public FormLoja(Cliente clienteLogado, Desenvolvedora desenvolvedoraLogada)  
         {
             this.cliente = clienteLogado;
             this.desenvolvedora = desenvolvedoraLogada;
+
+            ConnectionDB barqueiro = new ConnectionDB();
+            this.jogos = barqueiro.getJogoList();
+            
             InitializeComponent();
             if (!desenvolvedora.Email.Equals("") && cliente.Email.Equals(""))
             {
@@ -70,7 +75,13 @@ namespace Stelf
         private void FormLoja_VisibleChanged(object sender, EventArgs e)
         {
             ConnectionDB barqueiro = new ConnectionDB();
-            var jogos = barqueiro.getJogoList();
+            this.jogos = barqueiro.getJogoList();
+            constroiJogosLoja(jogos);
+        }
+
+        private void constroiJogosLoja(List<Jogo> jogosLoja)
+        {
+            ConnectionDB barqueiro = new ConnectionDB();
 
             int linha = -1;
             for (int i = 0; i < jogos.Count; i++)
@@ -86,11 +97,10 @@ namespace Stelf
                 }
 
                 int x_offset = 269;
-                int y_offset_button = 150;
                 int y_offset_picture_box = 221;
 
                 var pic = new PictureBox();
-                pic.Location = new Point(x_pic + coluna*x_offset, y_pic + linha*y_offset_picture_box);
+                pic.Location = new Point(x_pic + coluna * x_offset, y_pic + linha * y_offset_picture_box);
                 pic.Size = new Size(253, 151);
                 pic.Image = barqueiro.BytesToImage(jogos[i].imagem);
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,11 +109,75 @@ namespace Stelf
                 var button = new Button();
                 button.Text = "R$ " + jogos[i].preco.ToString();
                 button.BackColor = Color.LightGreen;
-                button.Location = new Point(x_button + coluna * x_offset, y_button + linha* y_offset_picture_box);
+                button.Location = new Point(x_button + coluna * x_offset, y_button + linha * y_offset_picture_box);
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.BorderSize = 0;
                 button.Size = new Size(253, 23);
                 this.Controls.Add(button);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            String filtro = comboBoxFiltro.Text;
+            
+            if (filtro.Equals(""))
+            {
+                MessageBox.Show("Escolha um filtro primeiramente!");
+            }
+            else
+            {
+                List<Jogo> jogosFiltrados = new List<Jogo>();
+
+                switch (filtro)
+                {
+                    case "Nome":
+                        foreach (Jogo jogo in this.jogos)
+                        {
+                            if (jogo.nome.Equals(textBoxBusca.Text))
+                            {
+                                jogosFiltrados.Add(jogo);
+                            }
+                        }
+                    break;
+                    case "Desenvolvedora":
+                        foreach (Jogo jogo in this.jogos)
+                        {
+                            if (jogo.desenvolvedora.Equals(textBoxBusca.Text))
+                            {
+                                jogosFiltrados.Add(jogo);
+                            }
+                        }
+                    break;
+                    case "Faixa Etária":
+                        foreach (Jogo jogo in this.jogos)
+                        {
+                            if (jogo.faixaEtaria.Equals(textBoxBusca.Text))
+                            {
+                                jogosFiltrados.Add(jogo);
+                            }
+                        }
+                    break;
+                    case "Preço":
+                        foreach (Jogo jogo in this.jogos)
+                        {
+                            if (jogo.preco.Equals(textBoxBusca.Text))
+                            {
+                                jogosFiltrados.Add(jogo);
+                            }
+                        }
+                    break;
+                    case "Gênero":
+                        foreach (Jogo jogo in this.jogos)
+                        {
+                            if (jogo.genero.Equals(textBoxBusca.Text))
+                            {
+                                jogosFiltrados.Add(jogo);
+                            }
+                        }
+                    break;
+                }
+                constroiJogosLoja(jogosFiltrados);
             }
         }
     }
