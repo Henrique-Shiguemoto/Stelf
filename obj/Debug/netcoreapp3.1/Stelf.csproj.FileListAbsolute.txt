@@ -272,3 +272,4 @@ C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.CopyComplete
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.dll
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.pdb
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.genruntimeconfig.cache
+C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources

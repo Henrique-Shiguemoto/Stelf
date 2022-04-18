@@ -15,6 +15,7 @@ namespace Stelf
         private Cliente cliente;
         private Desenvolvedora desenvolvedora;
         private List<Jogo> jogos;
+        private List<Jogo> carrinho;
 
         public FormLoja(Cliente clienteLogado, Desenvolvedora desenvolvedoraLogada)  
         {
@@ -206,6 +207,29 @@ namespace Stelf
                     constroiJogosLoja(jogosFiltrados);
                 }
             }
+        }
+
+        private void btnBiblioteca_Click(object sender, EventArgs e)
+        {
+
+            labelTitulo.Text = "B I B L I O T E C A";
+
+            panelJogos.Controls.Clear();
+
+            //recarregar página com os jogos do cliente
+        }
+
+        private void btnCarrinho_Click(object sender, EventArgs e)
+        {
+            FormCarrinho formCarrinho = new FormCarrinho(this.carrinho);
+            formCarrinho.Tag = this;
+            formCarrinho.Show(this);
+            Hide();
+        }
+
+        private void btnLoja_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

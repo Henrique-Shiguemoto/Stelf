@@ -13,6 +13,9 @@
     <Compile Update="FormAlterarDadosCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormCarrinho.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormLauncher.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -45,6 +45,7 @@ namespace Stelf
             this.labelTitulo = new System.Windows.Forms.Label();
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.panelJogos = new System.Windows.Forms.Panel();
+            this.btnCarrinho = new System.Windows.Forms.Button();
             this.panelPrincipal.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +68,7 @@ namespace Stelf
             // 
             // btnAdicionarJogo
             // 
-            this.btnAdicionarJogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnAdicionarJogo.BackColor = System.Drawing.Color.DimGray;
             this.btnAdicionarJogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdicionarJogo.FlatAppearance.BorderSize = 0;
             this.btnAdicionarJogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -82,7 +83,7 @@ namespace Stelf
             // 
             // btnLogOut
             // 
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnLogOut.BackColor = System.Drawing.Color.DimGray;
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -96,7 +97,7 @@ namespace Stelf
             // 
             // btnEditarPerfil
             // 
-            this.btnEditarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnEditarPerfil.BackColor = System.Drawing.Color.DimGray;
             this.btnEditarPerfil.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditarPerfil.FlatAppearance.BorderSize = 0;
             this.btnEditarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -110,7 +111,7 @@ namespace Stelf
             // 
             // btnBiblioteca
             // 
-            this.btnBiblioteca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnBiblioteca.BackColor = System.Drawing.Color.DimGray;
             this.btnBiblioteca.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBiblioteca.FlatAppearance.BorderSize = 0;
             this.btnBiblioteca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -120,11 +121,12 @@ namespace Stelf
             this.btnBiblioteca.TabIndex = 2;
             this.btnBiblioteca.Text = "BIBLIOTECA";
             this.btnBiblioteca.UseVisualStyleBackColor = false;
+            this.btnBiblioteca.Click += new System.EventHandler(this.btnBiblioteca_Click);
             // 
             // btnLoja
             // 
             this.btnLoja.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLoja.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnLoja.BackColor = System.Drawing.Color.DimGray;
             this.btnLoja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLoja.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLoja.FlatAppearance.BorderSize = 0;
@@ -138,7 +140,7 @@ namespace Stelf
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.panelLogo.BackColor = System.Drawing.Color.DimGray;
             this.panelLogo.Controls.Add(this.lbEmail);
             this.panelLogo.Controls.Add(this.lbNome);
             this.panelLogo.Controls.Add(this.pictureBox1);
@@ -186,14 +188,14 @@ namespace Stelf
             // 
             this.textBoxBusca.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.textBoxBusca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxBusca.Location = new System.Drawing.Point(742, 42);
+            this.textBoxBusca.Location = new System.Drawing.Point(757, 23);
             this.textBoxBusca.Name = "textBoxBusca";
             this.textBoxBusca.Size = new System.Drawing.Size(290, 16);
             this.textBoxBusca.TabIndex = 1;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(912, 72);
+            this.btnBuscar.Location = new System.Drawing.Point(927, 47);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(120, 23);
             this.btnBuscar.TabIndex = 6;
@@ -205,7 +207,7 @@ namespace Stelf
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitulo.Location = new System.Drawing.Point(304, 42);
+            this.labelTitulo.Location = new System.Drawing.Point(232, 41);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(145, 54);
             this.labelTitulo.TabIndex = 0;
@@ -221,7 +223,7 @@ namespace Stelf
             "Faixa Etária",
             "Preço",
             "Gênero"});
-            this.comboBoxFiltro.Location = new System.Drawing.Point(742, 72);
+            this.comboBoxFiltro.Location = new System.Drawing.Point(757, 47);
             this.comboBoxFiltro.Name = "comboBoxFiltro";
             this.comboBoxFiltro.Size = new System.Drawing.Size(164, 23);
             this.comboBoxFiltro.TabIndex = 7;
@@ -229,19 +231,33 @@ namespace Stelf
             // panelJogos
             // 
             this.panelJogos.AutoScroll = true;
-            this.panelJogos.BackColor = System.Drawing.Color.Gray;
-            this.panelJogos.Location = new System.Drawing.Point(220, 121);
+            this.panelJogos.BackColor = System.Drawing.Color.Silver;
+            this.panelJogos.Location = new System.Drawing.Point(217, 121);
             this.panelJogos.Name = "panelJogos";
-            this.panelJogos.Size = new System.Drawing.Size(831, 463);
+            this.panelJogos.Size = new System.Drawing.Size(834, 463);
             this.panelJogos.TabIndex = 8;
+            // 
+            // btnCarrinho
+            // 
+            this.btnCarrinho.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCarrinho.FlatAppearance.BorderSize = 0;
+            this.btnCarrinho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarrinho.Location = new System.Drawing.Point(927, 92);
+            this.btnCarrinho.Name = "btnCarrinho";
+            this.btnCarrinho.Size = new System.Drawing.Size(120, 23);
+            this.btnCarrinho.TabIndex = 9;
+            this.btnCarrinho.Text = "Carrinho";
+            this.btnCarrinho.UseVisualStyleBackColor = false;
+            this.btnCarrinho.Click += new System.EventHandler(this.btnCarrinho_Click);
             // 
             // FormLoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1063, 596);
+            this.Controls.Add(this.btnCarrinho);
             this.Controls.Add(this.panelJogos);
             this.Controls.Add(this.comboBoxFiltro);
             this.Controls.Add(this.btnBuscar);
@@ -280,5 +296,6 @@ namespace Stelf
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBoxFiltro;
         private System.Windows.Forms.Panel panelJogos;
+        private System.Windows.Forms.Button btnCarrinho;
     }
 }

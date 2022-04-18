@@ -51,6 +51,7 @@ namespace Stelf
             {
                 MessageBox.Show("Conta Não Encontrada!");
             }
+            Hide();
         }
 
         private void FormLauncher_VisibleChanged(object sender, EventArgs e)
