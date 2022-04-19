@@ -5,22 +5,25 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Stelf.classes;
 using MongoDB.Driver.Linq;
 
 namespace Stelf
 {
     public partial class FormLoja : Form
     {
-        
         private Cliente cliente;
         private Desenvolvedora desenvolvedora;
         private List<Jogo> jogos;
         private List<Jogo> carrinho;
+        private List<Jogo> biblioteca;
 
         public FormLoja(Cliente clienteLogado, Desenvolvedora desenvolvedoraLogada)  
         {
             this.cliente = clienteLogado;
             this.desenvolvedora = desenvolvedoraLogada;
+            this.carrinho = new List<Jogo>();
+            this.biblioteca = new List<Jogo>();
 
             ConnectionDB barqueiro = new ConnectionDB();
             this.jogos = barqueiro.getJogoList();
@@ -78,6 +81,7 @@ namespace Stelf
         {
             if (this.Visible == true)
             {
+                btnCarrinho.Text = "Carrinho - " + carrinho.Count;
                 panelJogos.Controls.Clear();
                 ConnectionDB barqueiro = new ConnectionDB();
                 this.jogos = barqueiro.getJogoList();
@@ -87,8 +91,6 @@ namespace Stelf
 
         private void constroiJogosLoja(List<Jogo> jogosLoja)
         {
-            ConnectionDB barqueiro = new ConnectionDB();
-
             int linha = -1;
             for (int i = 0; i < jogosLoja.Count; i++)
             {
@@ -105,22 +107,67 @@ namespace Stelf
                 int x_offset = 269;
                 int y_offset_picture_box = 221;
 
-                var pic = new PictureBox();
-                pic.Location = new Point(x_pic + (coluna * x_offset) - panelJogos.Location.X, y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y);
-                pic.Size = new Size(253, 151);
-                pic.Image = barqueiro.BytesToImage(jogosLoja[i].imagem);
-                pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                panelJogos.Controls.Add(pic);
+                LojaItem item = new LojaItem(x_pic + (coluna * x_offset) - panelJogos.Location.X,
+                                            y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y,
+                                            x_button + (coluna * x_offset) - panelJogos.Location.X,
+                                            y_button + (linha * y_offset_picture_box) - panelJogos.Location.Y,
+                                            ConversorImagem.BytesToImage(jogos[i].imagem),
+                                            jogos[i]);
+                panelJogos.Controls.Add(item.pictureBox);
+                panelJogos.Controls.Add(item.button);
 
-                var button = new Button();
-                button.Text = "R$ " + jogosLoja[i].preco.ToString();
-                button.BackColor = Color.LightGreen;
-                button.Location = new Point(x_button + (coluna * x_offset) - panelJogos.Location.X, y_button + (linha * y_offset_picture_box) - panelJogos.Location.Y);
-                button.FlatStyle = FlatStyle.Flat;
-                button.FlatAppearance.BorderSize = 0;
-                button.Size = new Size(253, 23);
-                panelJogos.Controls.Add(button);
+                item.pictureBox.Click += Image_Click;
+                item.button.Click += Button_Click;
+
+                if (carrinho.Find(x => x._id == jogos[i]._id) != null)
+                {
+                    item.button.BackColor = Color.Firebrick;
+                    item.button.Text = "Remover do Carrinho";
+                }
             }
+        }
+
+        private void Image_Click(object sender, EventArgs e)
+        {
+            var pictureBox = sender as PictureBox;
+            Jogo jogo = (Jogo)pictureBox.Tag;
+
+            ToolTip toolTip = new ToolTip();
+            toolTip.AutoPopDelay = 2000;
+
+            String toolTipText = "Nome: " + jogo.nome + "\n" +
+                                 "Desenvolvedora: " + jogo.desenvolvedora.Nome + "\n" +
+                                 "Gênero: " + jogo.genero.ToString() + "\n" +
+                                 "Faixa Etária: " + jogo.faixaEtaria.ToString() + "\n" +
+                                 "Descrição: " + jogo.descricao + "\n";
+            //Podemos adicionar os requisitos dos jogos na toolTip
+
+            toolTip.Show(toolTipText, pictureBox);
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            Jogo jogo = (Jogo)button.Tag;
+
+            //Vamos adicionar o jogo no carrinho
+            if (button.BackColor.Equals(Color.LightGreen))
+            {
+                button.BackColor = Color.Firebrick;
+                button.Text = "Remover do Carrinho";
+                carrinho.Add(jogo);
+                MessageBox.Show(jogo.nome + " Adicionado com sucesso ao Carrinho!\n" + "Carrinho possui " + carrinho.Count.ToString() + " jogos.");
+            }
+            //Vamos remover o jogo do carrinho
+            else
+            {
+                button.BackColor = Color.LightGreen;
+                carrinho.Remove(carrinho.Find(x => x._id == jogo._id));
+                button.Text = "R$ " + jogo.preco;
+                MessageBox.Show(jogo.nome + " Removido com sucesso ao Carrinho!\n" + "Carrinho possui " + carrinho.Count.ToString() + " jogos.");
+            }
+
+            btnCarrinho.Text = "Carrinho - " + carrinho.Count.ToString();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -225,11 +272,6 @@ namespace Stelf
             formCarrinho.Tag = this;
             formCarrinho.Show(this);
             Hide();
-        }
-
-        private void btnLoja_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

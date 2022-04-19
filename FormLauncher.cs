@@ -56,8 +56,8 @@ namespace Stelf
 
         private void FormLauncher_VisibleChanged(object sender, EventArgs e)
         {
-            emailTextBox.Text = "";
-            passwordTextBox.Text = "";
+            //emailTextBox.Text = "";
+            //passwordTextBox.Text = "";
         }
     }
 }

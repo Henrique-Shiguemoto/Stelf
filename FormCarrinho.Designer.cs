@@ -34,20 +34,14 @@ namespace Stelf
             this.voltarBtn = new System.Windows.Forms.Button();
             this.confirmarBtn = new System.Windows.Forms.Button();
             this.panelCarrinho = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelCarrinho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitulo.Location = new System.Drawing.Point(25, 25);
+            this.labelTitulo.Location = new System.Drawing.Point(12, 14);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(221, 54);
             this.labelTitulo.TabIndex = 1;
@@ -71,74 +65,26 @@ namespace Stelf
             this.confirmarBtn.TabIndex = 11;
             this.confirmarBtn.Text = "Confirmar";
             this.confirmarBtn.UseVisualStyleBackColor = true;
+            this.confirmarBtn.Click += new System.EventHandler(this.confirmarBtn_Click);
             // 
             // panelCarrinho
             // 
             this.panelCarrinho.AutoScroll = true;
-            this.panelCarrinho.BackColor = System.Drawing.Color.Gray;
-            this.panelCarrinho.Controls.Add(this.button1);
-            this.panelCarrinho.Controls.Add(this.label3);
-            this.panelCarrinho.Controls.Add(this.label2);
-            this.panelCarrinho.Controls.Add(this.label1);
-            this.panelCarrinho.Controls.Add(this.pictureBox1);
+            this.panelCarrinho.BackColor = System.Drawing.Color.DarkGray;
             this.panelCarrinho.Location = new System.Drawing.Point(12, 82);
             this.panelCarrinho.Name = "panelCarrinho";
-            this.panelCarrinho.Size = new System.Drawing.Size(726, 333);
+            this.panelCarrinho.Size = new System.Drawing.Size(726, 353);
             this.panelCarrinho.TabIndex = 13;
             // 
-            // button1
+            // lbTotal
             // 
-            this.button1.BackColor = System.Drawing.Color.Brown;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(651, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 21);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Remover";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoEllipsis = true;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(624, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 37);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Preço";
-            // 
-            // label2
-            // 
-            this.label2.AutoEllipsis = true;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(155, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nome Desenvolvedora";
-            // 
-            // label1
-            // 
-            this.label1.AutoEllipsis = true;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(155, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome Jogo";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 96);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTotal.Location = new System.Drawing.Point(12, 450);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(68, 21);
+            this.lbTotal.TabIndex = 14;
+            this.lbTotal.Text = "TOTAL =";
             // 
             // FormCarrinho
             // 
@@ -146,6 +92,7 @@ namespace Stelf
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(750, 515);
+            this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.panelCarrinho);
             this.Controls.Add(this.voltarBtn);
             this.Controls.Add(this.confirmarBtn);
@@ -157,9 +104,6 @@ namespace Stelf
             this.Name = "FormCarrinho";
             this.Text = "Carrinho";
             this.Load += new System.EventHandler(this.FormCarrinho_Load);
-            this.panelCarrinho.ResumeLayout(false);
-            this.panelCarrinho.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,10 +115,6 @@ namespace Stelf
         private System.Windows.Forms.Button voltarBtn;
         private System.Windows.Forms.Button confirmarBtn;
         private System.Windows.Forms.Panel panelCarrinho;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbTotal;
     }
 }

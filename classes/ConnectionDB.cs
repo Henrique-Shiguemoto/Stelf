@@ -15,14 +15,6 @@ namespace Stelf
         IMongoCollection<Cliente> m_collection;
         IMongoCollection<Desenvolvedora> m_collection2;
         IMongoCollection<Jogo> m_collection3;
-        
-        public Image BytesToImage(byte[] byteArray)
-        {
-            using (var ms = new MemoryStream(byteArray))
-            {
-                return Image.FromStream(ms);
-            }
-        }
 
         public ConnectionDB()
         {
@@ -82,18 +74,6 @@ namespace Stelf
             m_collection3.InsertOne(jogo);
         }
 
-        public void mostrarJogoImg(String id, Image img)
-        {
-            try
-            {
-                Jogo _jogo = m_collection3.Find(x => x._id == new ObjectId(id)).FirstOrDefault();
-                img = BytesToImage(_jogo.imagem);
-            }catch(Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-
-        }
         public void alterarDadoCliente(ObjectId id, String nome, String senha, String email)
         {
             var updateDef = Builders<Cliente>.Update.Set("Nome", nome).Set("Senha", senha).Set("Email", email);

@@ -76,6 +76,7 @@ namespace Stelf
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(495, 23);
             this.emailTextBox.TabIndex = 3;
+            this.emailTextBox.Text = "gabriel551@hotmail.com";
             // 
             // passwordTextBox
             // 
@@ -84,6 +85,7 @@ namespace Stelf
             this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(495, 23);
             this.passwordTextBox.TabIndex = 4;
+            this.passwordTextBox.Text = "gabriel55551";
             // 
             // entrarBtn
             // 
