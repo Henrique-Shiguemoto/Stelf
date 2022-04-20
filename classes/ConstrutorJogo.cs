@@ -6,13 +6,13 @@ using System.Windows.Forms;
 
 namespace Stelf.classes
 {
-    public class LojaItem
+    public class ConstrutorJogo
     {
         public Jogo jogoItem;
         public PictureBox pictureBox;
         public Button button;
 
-        public LojaItem(int pictureBox_X, int pictureBox_Y, int button_X, int button_Y, Image image, Jogo jogo)
+        public ConstrutorJogo(int pictureBox_X, int pictureBox_Y, int button_X, int button_Y, Image image, Jogo jogo)
         {
             pictureBox = new PictureBox();
             pictureBox.Location = new Point(pictureBox_X, pictureBox_Y);
@@ -29,6 +29,18 @@ namespace Stelf.classes
             button.Size = new Size(253, 23);
             button.Text = "R$ " + jogo.preco.ToString();
             button.Tag = jogo;
+
+            jogoItem = jogo;
+        }
+
+        public ConstrutorJogo(int pictureBox_X, int pictureBox_Y, Image image, Jogo jogo)
+        {
+            pictureBox = new PictureBox();
+            pictureBox.Location = new Point(pictureBox_X, pictureBox_Y);
+            pictureBox.Size = new Size(253, 151);
+            pictureBox.Image = image;
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.Tag = jogo;
 
             jogoItem = jogo;
         }

@@ -272,6 +272,7 @@ namespace Stelf
             this.Name = "FormCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar";
+            this.Load += new System.EventHandler(this.FormCadastro_Load);
             this.tipoContaGroupBox.ResumeLayout(false);
             this.tipoContaGroupBox.PerformLayout();
             this.ResumeLayout(false);

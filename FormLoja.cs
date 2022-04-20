@@ -112,7 +112,7 @@ namespace Stelf
                 int x_offset = 269;
                 int y_offset_picture_box = 221;
 
-                LojaItem item = new LojaItem(x_pic + (coluna * x_offset) - panelJogos.Location.X,
+                ConstrutorJogo item = new ConstrutorJogo(x_pic + (coluna * x_offset) - panelJogos.Location.X,
                                             y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y,
                                             x_button + (coluna * x_offset) - panelJogos.Location.X,
                                             y_button + (linha * y_offset_picture_box) - panelJogos.Location.Y,
@@ -129,6 +129,32 @@ namespace Stelf
                     item.button.BackColor = Color.Firebrick;
                     item.button.Text = "Remover do Carrinho";
                 }
+            }
+        }
+
+        private void constroiJogosBiblioteca(List<Jogo> biblioteca)
+        {
+            int linha = -1;
+            for (int i = 0; i < biblioteca.Count; i++)
+            {
+                int x_pic = 235;
+                int y_pic = 158;
+                int coluna = i % 3;
+                if (coluna == 0)
+                {
+                    linha++;
+                }
+
+                int x_offset = 269;
+                int y_offset_picture_box = 221;
+
+                ConstrutorJogo item = new ConstrutorJogo(x_pic + (coluna * x_offset) - panelJogos.Location.X,
+                                            y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y,
+                                            ConversorImagem.BytesToImage(jogos[i].imagem),
+                                            jogos[i]);
+                panelJogos.Controls.Add(item.pictureBox);
+
+                item.pictureBox.Click += Image_Click;
             }
         }
 
@@ -263,13 +289,10 @@ namespace Stelf
 
         private void btnBiblioteca_Click(object sender, EventArgs e)
         {
-
             labelTitulo.Text = "B I B L I O T E C A";
 
             panelJogos.Controls.Clear();
-            constroiJogosLoja(biblioteca);
-
-            //recarregar página com os jogos do cliente
+            constroiJogosBiblioteca(biblioteca);
         }
 
         private void btnCarrinho_Click(object sender, EventArgs e)
