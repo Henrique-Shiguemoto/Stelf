@@ -26,7 +26,7 @@ namespace Stelf
             var options = new CreateIndexOptions { Unique = true };
 
         }
-         public void inserirCliente(String nome, String email, String senha, DateTime dataNascimento)
+        public void inserirCliente(String nome, String email, String senha, DateTime dataNascimento)
         {
             try
             {
@@ -35,6 +35,7 @@ namespace Stelf
                 cliente.Senha = senha;
                 cliente.Email = email;
                 cliente.DataNascimento = dataNascimento;
+                cliente.jogosBiblioteca = new List<ObjectId>();
                 m_collection.InsertOne(cliente);
             }
             catch(Exception ex)
@@ -42,6 +43,19 @@ namespace Stelf
                 Console.WriteLine(ex.ToString());
             }
         }
+
+        public void inserirJogoBiblioteca(List<ObjectId> lst_id_jogo, Cliente cliente)
+        {
+            try {
+                var updateDef = Builders<Cliente>.Update.Set("jogosBiblioteca", lst_id_jogo);
+                m_collection.UpdateOne(s => s._id == cliente._id, updateDef);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
         public void inserirDesenvolvedora(String nome, String email, String senha, String contaBancaria)
         {
             try
@@ -95,8 +109,9 @@ namespace Stelf
                 var filtro = Builders<Cliente>.Filter.Eq("Email", email);
                 return m_collection.Find(filtro).First();
             }
-            catch
+            catch (Exception ex)
             {
+                cliente.Email = ex.Message;
                 return cliente;
             }
         }
@@ -119,6 +134,34 @@ namespace Stelf
         public List<Jogo> getJogoList()
         {
             return m_collection3.Find(new BsonDocument()).ToList();
+        }
+
+        public List<Jogo> getBibliotecaList(String EmailCliente)
+        {
+            try
+            {
+                List<Jogo> jogosLoja = getJogoList();
+                List<Jogo> listaBiblioteca = new List<Jogo>();
+                List<ObjectId> list_id = devolverClientePorEmail(EmailCliente).jogosBiblioteca;
+
+                if (list_id != null) {
+                    foreach (ObjectId id in list_id)
+                    {
+                        Jogo jg = jogosLoja.Find(x => x._id == id);
+                        if (jg != null)
+                        {
+                            listaBiblioteca.Add(jg);
+                        }
+                    }
+                }
+        
+                return listaBiblioteca;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return new List<Jogo>();
+            }         
         }
     }
 

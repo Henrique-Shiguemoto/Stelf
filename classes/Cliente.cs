@@ -12,6 +12,6 @@ namespace Stelf
         public String Email { get; set; }
         public DateTime DataNascimento { get; set; }
         public String Senha { get; set; }
-        public List<Jogo> jogosBiblioteca { get; set; }
+        public List<ObjectId> jogosBiblioteca { get; set; }
     }
 }

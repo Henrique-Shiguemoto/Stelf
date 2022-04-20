@@ -16,7 +16,7 @@ namespace Stelf
         private Desenvolvedora desenvolvedora;
         private List<Jogo> jogos;
         private List<Jogo> carrinho;
-        private List<Jogo> biblioteca;
+        private List<Jogo> biblioteca; 
 
         public FormLoja(Cliente clienteLogado, Desenvolvedora desenvolvedoraLogada)  
         {
@@ -86,6 +86,11 @@ namespace Stelf
                 ConnectionDB barqueiro = new ConnectionDB();
                 this.jogos = barqueiro.getJogoList();
                 constroiJogosLoja(jogos);
+                if (this.desenvolvedora.Email.Length == 0)
+                {
+                    this.biblioteca = barqueiro.getBibliotecaList(this.cliente.Email);
+                }
+                
             }
         }
 
@@ -262,16 +267,26 @@ namespace Stelf
             labelTitulo.Text = "B I B L I O T E C A";
 
             panelJogos.Controls.Clear();
+            constroiJogosLoja(biblioteca);
 
             //recarregar página com os jogos do cliente
         }
 
         private void btnCarrinho_Click(object sender, EventArgs e)
         {
-            FormCarrinho formCarrinho = new FormCarrinho(this.carrinho);
+            FormCarrinho formCarrinho = new FormCarrinho(this.carrinho, this.cliente, this.biblioteca);
             formCarrinho.Tag = this;
             formCarrinho.Show(this);
             Hide();
+        }
+
+        private void btnLoja_Click(object sender, EventArgs e)
+        {
+            labelTitulo.Text = "L O J A";
+
+            panelJogos.Controls.Clear();
+            constroiJogosLoja(jogos);
+
         }
     }
 }

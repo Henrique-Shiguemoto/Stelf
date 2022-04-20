@@ -137,6 +137,7 @@ namespace Stelf
             this.btnLoja.TabIndex = 1;
             this.btnLoja.Text = "LOJA";
             this.btnLoja.UseVisualStyleBackColor = false;
+            this.btnLoja.Click += new System.EventHandler(this.btnLoja_Click);
             // 
             // panelLogo
             // 

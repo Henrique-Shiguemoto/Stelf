@@ -32,6 +32,13 @@ namespace Stelf
             Cliente cliente = barqueiro.devolverClientePorEmail(emailTextBox.Text);
             Desenvolvedora desenvolvedora = barqueiro.devolverDesenvolvedoraPorEmail(emailTextBox.Text);
 
+            MessageBox.Show(cliente.Email);
+
+            if (emailTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Preencha o email!");
+            }
+
             if (!cliente.Email.Equals("") && cliente.Senha == passwordTextBox.Text)
             {
                 FormLoja frmLoja = new FormLoja(cliente, desenvolvedora);

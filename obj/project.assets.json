@@ -624,19 +624,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\azric\\.nuget\\packages\\": {}
+    "C:\\Users\\mathe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Stelf\\Stelf.csproj",
+      "projectUniqueName": "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj",
       "projectName": "Stelf",
-      "projectPath": "C:\\dev\\Stelf\\Stelf.csproj",
-      "packagesPath": "C:\\Users\\azric\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Stelf\\obj\\",
+      "projectPath": "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj",
+      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+      "outputPath": "H:\\PC_Matheus\\desenv\\Stelf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\azric\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -685,7 +685,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }
