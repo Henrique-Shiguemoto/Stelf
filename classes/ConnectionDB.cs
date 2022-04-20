@@ -138,32 +138,17 @@ namespace Stelf
 
         public List<Jogo> getBibliotecaList(String EmailCliente)
         {
-            try
-            {
-                List<Jogo> jogosLoja = getJogoList();
-                List<Jogo> listaBiblioteca = new List<Jogo>();
-                List<ObjectId> list_id = devolverClientePorEmail(EmailCliente).jogosBiblioteca;
-
-                if (list_id != null) {
-                    foreach (ObjectId id in list_id)
-                    {
-                        Jogo jg = jogosLoja.Find(x => x._id == id);
-                        if (jg != null)
-                        {
-                            listaBiblioteca.Add(jg);
-                        }
-                    }
+            List<Jogo> jogosLoja = getJogoList();
+            List<Jogo> listaBiblioteca = new List<Jogo>();
+            List<ObjectId> list_id = devolverClientePorEmail(EmailCliente).jogosBiblioteca;
+            if (list_id != null) {
+                foreach (ObjectId id in list_id)
+                {
+                    Jogo jg = jogosLoja.Find(x => x._id == id);
+                    listaBiblioteca.Add(jg);
                 }
-        
-                return listaBiblioteca;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return new List<Jogo>();
-            }         
+            return listaBiblioteca;
         }
     }
-
-    
 }

@@ -43,7 +43,6 @@ namespace Stelf
                 frmLoja.Tag = this;
                 frmLoja.Show(this);
                 Hide();
-
             }
             else if(!desenvolvedora.Email.Equals("") && desenvolvedora.Senha == passwordTextBox.Text)
             {

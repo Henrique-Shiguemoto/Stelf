@@ -90,7 +90,6 @@ namespace Stelf
                 {
                     this.biblioteca = barqueiro.getBibliotecaList(this.cliente.Email);
                 }
-                
             }
         }
 
@@ -150,8 +149,8 @@ namespace Stelf
 
                 ConstrutorJogo item = new ConstrutorJogo(x_pic + (coluna * x_offset) - panelJogos.Location.X,
                                             y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y,
-                                            ConversorImagem.BytesToImage(jogos[i].imagem),
-                                            jogos[i]);
+                                            ConversorImagem.BytesToImage(biblioteca[i].imagem),
+                                            biblioteca[i]);
                 panelJogos.Controls.Add(item.pictureBox);
 
                 item.pictureBox.Click += Image_Click;
@@ -184,10 +183,16 @@ namespace Stelf
             //Vamos adicionar o jogo no carrinho
             if (button.BackColor.Equals(Color.LightGreen))
             {
-                button.BackColor = Color.Firebrick;
-                button.Text = "Remover do Carrinho";
-                carrinho.Add(jogo);
-                MessageBox.Show(jogo.nome + " Adicionado com sucesso ao Carrinho!\n" + "Carrinho possui " + carrinho.Count.ToString() + " jogos.");
+                if (this.biblioteca.Find(x => x._id == jogo._id) != null)
+                {
+                    MessageBox.Show("Este jogo já está em sua biblioteca!");
+                }
+                else {
+                    button.BackColor = Color.Firebrick;
+                    button.Text = "Remover do Carrinho";
+                    carrinho.Add(jogo);
+                    MessageBox.Show(jogo.nome + " Adicionado com sucesso ao Carrinho!\n" + "Carrinho possui " + carrinho.Count.ToString() + " jogos.");
+                }
             }
             //Vamos remover o jogo do carrinho
             else
@@ -213,10 +218,21 @@ namespace Stelf
             {
                 List<Jogo> jogosFiltrados = new List<Jogo>();
                 bool validSearch = true;
+
+                List<Jogo> jogos_a_procurar = new List<Jogo>();
+                if (labelTitulo.Text == "L O J A")
+                {
+                    jogos_a_procurar = this.jogos;
+                }
+                else if(labelTitulo.Text == "B I B L I O T E C A")
+                {
+                    jogos_a_procurar = this.biblioteca;
+                }
+
                 switch (filtro)
                 {
                     case "Nome":
-                        foreach (Jogo jogo in this.jogos)
+                        foreach (Jogo jogo in jogos_a_procurar)
                         {
                             if (jogo.nome.Equals(textBoxBusca.Text))
                             {
@@ -225,7 +241,7 @@ namespace Stelf
                         }
                     break;
                     case "Desenvolvedora":
-                        foreach (Jogo jogo in this.jogos)
+                        foreach (Jogo jogo in jogos_a_procurar)
                         {
                             if (jogo.desenvolvedora.Nome.Equals(textBoxBusca.Text))
                             {
@@ -234,7 +250,7 @@ namespace Stelf
                         }
                     break;
                     case "Faixa Etária":
-                        foreach (Jogo jogo in this.jogos)
+                        foreach (Jogo jogo in jogos_a_procurar)
                         {
                             try
                             {
@@ -251,7 +267,7 @@ namespace Stelf
                         }
                     break;
                     case "Preço":
-                        foreach (Jogo jogo in this.jogos)
+                        foreach (Jogo jogo in jogos_a_procurar)
                         {
                             try
                             {
@@ -269,7 +285,7 @@ namespace Stelf
                         }
                     break;
                     case "Gênero":
-                        foreach (Jogo jogo in this.jogos)
+                        foreach (Jogo jogo in jogos_a_procurar)
                         {
                             if (jogo.genero.Equals(textBoxBusca.Text))
                             {
@@ -282,7 +298,15 @@ namespace Stelf
                 if (validSearch)
                 {
                     panelJogos.Controls.Clear();
-                    constroiJogosLoja(jogosFiltrados);
+                    if (labelTitulo.Text == "L O J A")
+                    {
+                        constroiJogosLoja(jogosFiltrados);
+                    }
+                    else if (labelTitulo.Text == "B I B L I O T E C A")
+                    {
+                        constroiJogosBiblioteca(jogosFiltrados);
+                    }
+                    
                 }
             }
         }
