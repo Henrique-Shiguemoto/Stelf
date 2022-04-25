@@ -417,6 +417,7 @@ namespace Stelf
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.imagemPictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(689, 675);

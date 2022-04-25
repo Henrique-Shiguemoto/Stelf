@@ -97,6 +97,7 @@ namespace Stelf
             this.Controls.Add(this.voltarBtn);
             this.Controls.Add(this.confirmarBtn);
             this.Controls.Add(this.labelTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(766, 554);

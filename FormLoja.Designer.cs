@@ -265,6 +265,7 @@ namespace Stelf
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.textBoxBusca);
             this.Controls.Add(this.panelPrincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormLoja";

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\USER SSD\\Desktop\\aualas ERE\\Stelf\\Stelf.csproj": {}
+    "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj": {}
   },
   "projects": {
-    "D:\\USER SSD\\Desktop\\aualas ERE\\Stelf\\Stelf.csproj": {
+    "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\USER SSD\\Desktop\\aualas ERE\\Stelf\\Stelf.csproj",
+        "projectUniqueName": "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj",
         "projectName": "Stelf",
-        "projectPath": "D:\\USER SSD\\Desktop\\aualas ERE\\Stelf\\Stelf.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\USER SSD\\Desktop\\aualas ERE\\Stelf\\obj\\",
+        "projectPath": "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj",
+        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+        "outputPath": "H:\\PC_Matheus\\desenv\\Stelf\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

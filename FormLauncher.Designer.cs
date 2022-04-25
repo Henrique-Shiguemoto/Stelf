@@ -38,6 +38,8 @@ namespace Stelf
             this.entrarBtn = new System.Windows.Forms.Button();
             this.cadastrarLauncherBtn = new System.Windows.Forms.Button();
             this.checkBoxExibirSenha = new System.Windows.Forms.CheckBox();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
             // 
             // stelfLabel
@@ -119,12 +121,25 @@ namespace Stelf
             this.checkBoxExibirSenha.UseVisualStyleBackColor = true;
             this.checkBoxExibirSenha.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.BackgroundImage")));
+            this.pictureBoxClose.Location = new System.Drawing.Point(528, 3);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxClose.TabIndex = 8;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
             // FormLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(555, 318);
+            this.Controls.Add(this.pictureBoxClose);
             this.Controls.Add(this.checkBoxExibirSenha);
             this.Controls.Add(this.cadastrarLauncherBtn);
             this.Controls.Add(this.entrarBtn);
@@ -142,6 +157,7 @@ namespace Stelf
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Launcher";
             this.VisibleChanged += new System.EventHandler(this.FormLauncher_VisibleChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +173,7 @@ namespace Stelf
         private System.Windows.Forms.Button entrarBtn;
         private System.Windows.Forms.Button cadastrarLauncherBtn;
         private System.Windows.Forms.CheckBox checkBoxExibirSenha;
+        private System.Windows.Forms.PictureBox pictureBoxClose;
     }
 }
 
