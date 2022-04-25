@@ -37,13 +37,14 @@ namespace Stelf
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.entrarBtn = new System.Windows.Forms.Button();
             this.cadastrarLauncherBtn = new System.Windows.Forms.Button();
+            this.checkBoxExibirSenha = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // stelfLabel
             // 
             this.stelfLabel.AutoSize = true;
             this.stelfLabel.Font = new System.Drawing.Font("Franklin Gothic Medium", 24.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.stelfLabel.Location = new System.Drawing.Point(211, 35);
+            this.stelfLabel.Location = new System.Drawing.Point(218, 68);
             this.stelfLabel.Name = "stelfLabel";
             this.stelfLabel.Size = new System.Drawing.Size(105, 38);
             this.stelfLabel.TabIndex = 0;
@@ -54,7 +55,7 @@ namespace Stelf
             // 
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emailLabel.Location = new System.Drawing.Point(12, 90);
+            this.emailLabel.Location = new System.Drawing.Point(19, 123);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(70, 25);
             this.emailLabel.TabIndex = 1;
@@ -64,7 +65,7 @@ namespace Stelf
             // 
             this.senhaLabel.AutoSize = true;
             this.senhaLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.senhaLabel.Location = new System.Drawing.Point(12, 154);
+            this.senhaLabel.Location = new System.Drawing.Point(19, 187);
             this.senhaLabel.Name = "senhaLabel";
             this.senhaLabel.Size = new System.Drawing.Size(68, 25);
             this.senhaLabel.TabIndex = 2;
@@ -72,7 +73,7 @@ namespace Stelf
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(20, 118);
+            this.emailTextBox.Location = new System.Drawing.Point(27, 151);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(495, 23);
             this.emailTextBox.TabIndex = 3;
@@ -80,7 +81,7 @@ namespace Stelf
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(20, 182);
+            this.passwordTextBox.Location = new System.Drawing.Point(27, 215);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(495, 23);
@@ -89,7 +90,7 @@ namespace Stelf
             // 
             // entrarBtn
             // 
-            this.entrarBtn.Location = new System.Drawing.Point(413, 238);
+            this.entrarBtn.Location = new System.Drawing.Point(420, 271);
             this.entrarBtn.Name = "entrarBtn";
             this.entrarBtn.Size = new System.Drawing.Size(102, 23);
             this.entrarBtn.TabIndex = 5;
@@ -99,7 +100,7 @@ namespace Stelf
             // 
             // cadastrarLauncherBtn
             // 
-            this.cadastrarLauncherBtn.Location = new System.Drawing.Point(296, 238);
+            this.cadastrarLauncherBtn.Location = new System.Drawing.Point(303, 271);
             this.cadastrarLauncherBtn.Name = "cadastrarLauncherBtn";
             this.cadastrarLauncherBtn.Size = new System.Drawing.Size(102, 23);
             this.cadastrarLauncherBtn.TabIndex = 6;
@@ -107,12 +108,24 @@ namespace Stelf
             this.cadastrarLauncherBtn.UseVisualStyleBackColor = true;
             this.cadastrarLauncherBtn.Click += new System.EventHandler(this.cadastrarLauncherBtn_Click);
             // 
+            // checkBoxExibirSenha
+            // 
+            this.checkBoxExibirSenha.AutoSize = true;
+            this.checkBoxExibirSenha.Location = new System.Drawing.Point(27, 244);
+            this.checkBoxExibirSenha.Name = "checkBoxExibirSenha";
+            this.checkBoxExibirSenha.Size = new System.Drawing.Size(90, 19);
+            this.checkBoxExibirSenha.TabIndex = 7;
+            this.checkBoxExibirSenha.Text = "Exibir Senha";
+            this.checkBoxExibirSenha.UseVisualStyleBackColor = true;
+            this.checkBoxExibirSenha.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // FormLauncher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(539, 279);
+            this.ClientSize = new System.Drawing.Size(555, 318);
+            this.Controls.Add(this.checkBoxExibirSenha);
             this.Controls.Add(this.cadastrarLauncherBtn);
             this.Controls.Add(this.entrarBtn);
             this.Controls.Add(this.passwordTextBox);
@@ -120,6 +133,7 @@ namespace Stelf
             this.Controls.Add(this.senhaLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.stelfLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(555, 318);
@@ -142,6 +156,7 @@ namespace Stelf
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button entrarBtn;
         private System.Windows.Forms.Button cadastrarLauncherBtn;
+        private System.Windows.Forms.CheckBox checkBoxExibirSenha;
     }
 }
 

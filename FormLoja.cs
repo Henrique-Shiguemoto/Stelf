@@ -29,16 +29,19 @@ namespace Stelf
             this.jogos = barqueiro.getJogoList();
             
             InitializeComponent();
-            if (!desenvolvedora.Email.Equals("") && cliente.Email.Equals(""))
+            if (!desenvolvedora.Email.Equals(""))
             {
                 btnAdicionarJogo.Visible = true;
+                btnBiblioteca.Visible = false;
+                btnCarrinho.Visible = false;
             }
+            
             Carrega_Dados_Login();
         }
 
         private void btnEditarPerfil_Click(object sender, EventArgs e)
         {
-            if (cliente.Email.Equals("")) {
+            if (!desenvolvedora.Email.Equals("")) {
                 FormAlterarDadosDesenvolvedora formAlterarDadosD = new FormAlterarDadosDesenvolvedora(desenvolvedora);
                 formAlterarDadosD.Show();
             } else
@@ -57,12 +60,12 @@ namespace Stelf
 
         private void Carrega_Dados_Login()
         {
-            if (cliente.Email.Equals(""))
+            if (!desenvolvedora.Email.Equals(""))
             {
                 lbNome.Text = desenvolvedora.Nome;
                 lbEmail.Text = desenvolvedora.Email;
             }
-            else
+            else 
             {
                 lbNome.Text = cliente.Nome;
                 lbEmail.Text = cliente.Email;
@@ -110,23 +113,34 @@ namespace Stelf
 
                 int x_offset = 269;
                 int y_offset_picture_box = 221;
-
-                ConstrutorJogo item = new ConstrutorJogo(x_pic + (coluna * x_offset) - panelJogos.Location.X,
-                                            y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y,
-                                            x_button + (coluna * x_offset) - panelJogos.Location.X,
-                                            y_button + (linha * y_offset_picture_box) - panelJogos.Location.Y,
-                                            ConversorImagem.BytesToImage(jogos[i].imagem),
-                                            jogos[i]);
-                panelJogos.Controls.Add(item.pictureBox);
-                panelJogos.Controls.Add(item.button);
-
-                item.pictureBox.Click += Image_Click;
-                item.button.Click += Button_Click;
-
-                if (carrinho.Find(x => x._id == jogos[i]._id) != null)
+                if (desenvolvedora.Email.Equals(""))
                 {
-                    item.button.BackColor = Color.Firebrick;
-                    item.button.Text = "Remover do Carrinho";
+                    ConstrutorJogo item = new ConstrutorJogo(x_pic + (coluna * x_offset) - panelJogos.Location.X,
+                                                y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y,
+                                                x_button + (coluna * x_offset) - panelJogos.Location.X,
+                                                y_button + (linha * y_offset_picture_box) - panelJogos.Location.Y,
+                                                ConversorImagem.BytesToImage(jogos[i].imagem),
+                                                jogos[i]);
+                    panelJogos.Controls.Add(item.pictureBox);
+                    panelJogos.Controls.Add(item.button);
+
+                    item.pictureBox.Click += Image_Click;
+                    item.button.Click += Button_Click;
+
+                    if (carrinho.Find(x => x._id == jogos[i]._id) != null)
+                    {
+                        item.button.BackColor = Color.Firebrick;
+                        item.button.Text = "Remover do Carrinho";
+                    }
+                }
+                else
+                {
+                    ConstrutorJogo item = new ConstrutorJogo(x_pic + (coluna * x_offset) - panelJogos.Location.X,
+                            y_pic + (linha * y_offset_picture_box) - panelJogos.Location.Y,                     
+                            ConversorImagem.BytesToImage(jogos[i].imagem),
+                            jogos[i]);
+                    panelJogos.Controls.Add(item.pictureBox);
+                    item.pictureBox.Click += Image_Click;
                 }
             }
         }

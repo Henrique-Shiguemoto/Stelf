@@ -275,3 +275,4 @@ C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.AssemblyReference.cache
 H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAddJogo.resources
 H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources
+D:\USER SSD\Desktop\aualas ERE\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources

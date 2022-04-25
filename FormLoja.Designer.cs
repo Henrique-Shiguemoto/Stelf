@@ -69,7 +69,7 @@ namespace Stelf
             // btnAdicionarJogo
             // 
             this.btnAdicionarJogo.BackColor = System.Drawing.Color.DimGray;
-            this.btnAdicionarJogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdicionarJogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAdicionarJogo.FlatAppearance.BorderSize = 0;
             this.btnAdicionarJogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarJogo.Location = new System.Drawing.Point(0, 465);

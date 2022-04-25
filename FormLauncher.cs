@@ -27,6 +27,7 @@ namespace Stelf
 
         private void entrarBtn_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             ConnectionDB barqueiro = new ConnectionDB();
 
             Cliente cliente = barqueiro.devolverClientePorEmail(emailTextBox.Text);
@@ -42,7 +43,7 @@ namespace Stelf
                 FormLoja frmLoja = new FormLoja(cliente, desenvolvedora);
                 frmLoja.Tag = this;
                 frmLoja.Show(this);
-                Hide();
+                Hide();            
             }
             else if(!desenvolvedora.Email.Equals("") && desenvolvedora.Senha == passwordTextBox.Text)
             {
@@ -55,13 +56,25 @@ namespace Stelf
             {
                 MessageBox.Show("Conta Não Encontrada!");
             }
+            Cursor.Current = Cursors.Default;
             Hide();
         }
 
         private void FormLauncher_VisibleChanged(object sender, EventArgs e)
         {
-            //emailTextBox.Text = "";
-            //passwordTextBox.Text = "";
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxExibirSenha.Checked)
+            {
+                passwordTextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordTextBox.PasswordChar = '●';
+            }
         }
     }
 }
