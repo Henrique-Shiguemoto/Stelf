@@ -225,6 +225,9 @@ D:\USER SSD\Desktop\aualas ERE\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\lib\ne
 D:\USER SSD\Desktop\aualas ERE\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.CopyComplete
 D:\USER SSD\Desktop\aualas ERE\Stelf\obj\Debug\netcoreapp3.1\Stelf.genruntimeconfig.cache
 D:\USER SSD\Desktop\aualas ERE\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAddJogo.resources
+H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAddJogo.resources
+H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources
+D:\USER SSD\Desktop\aualas ERE\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources
 C:\dev\Stelf\bin\Debug\netcoreapp3.1\Stelf.exe
 C:\dev\Stelf\bin\Debug\netcoreapp3.1\Stelf.deps.json
 C:\dev\Stelf\bin\Debug\netcoreapp3.1\Stelf.runtimeconfig.json
@@ -255,10 +258,12 @@ C:\dev\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
 C:\dev\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
 C:\dev\Stelf\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\dev\Stelf\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.AssemblyReference.cache
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAddJogo.resources
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAlterarDadosCliente.resources
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAlterarDadosDesenvolvedora.resources
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCadastro.resources
+C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormLauncher.resources
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormLoja.resources
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.Properties.Resources.resources
@@ -271,8 +276,3 @@ C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.CopyComplete
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.dll
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.pdb
 C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.genruntimeconfig.cache
-C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources
-C:\dev\Stelf\obj\Debug\netcoreapp3.1\Stelf.csproj.AssemblyReference.cache
-H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormAddJogo.resources
-H:\PC_Matheus\desenv\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources
-D:\USER SSD\Desktop\aualas ERE\Stelf\obj\Debug\netcoreapp3.1\Stelf.FormCarrinho.resources

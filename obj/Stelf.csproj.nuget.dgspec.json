@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj": {}
+    "C:\\dev\\Stelf\\Stelf.csproj": {}
   },
   "projects": {
-    "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj": {
+    "C:\\dev\\Stelf\\Stelf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj",
+        "projectUniqueName": "C:\\dev\\Stelf\\Stelf.csproj",
         "projectName": "Stelf",
-        "projectPath": "H:\\PC_Matheus\\desenv\\Stelf\\Stelf.csproj",
-        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "H:\\PC_Matheus\\desenv\\Stelf\\obj\\",
+        "projectPath": "C:\\dev\\Stelf\\Stelf.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\Stelf\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net7.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "dependencies": {
             "MongoDB.Driver": {
               "target": "Package",
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
